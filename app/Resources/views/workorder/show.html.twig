@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Workorder</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ workOrder.id }}</td>
+            </tr>
+            <tr>
+                <th>Todo</th>
+                <td>{% if workOrder.toDo %}{{ workOrder.toDo|join(', ') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Parts</th>
+                <td>{% if workOrder.parts %}{{ workOrder.parts|join(', ') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Value</th>
+                <td>{{ workOrder.value }}</td>
+            </tr>
+            <tr>
+                <th>Starttime</th>
+                <td>{% if workOrder.startTime %}{{ workOrder.startTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Endtime</th>
+                <td>{% if workOrder.endTime %}{{ workOrder.endTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ workOrder.duration }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ workOrder.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('workorder_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

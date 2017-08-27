@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Workorders list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Todo</th>
+                <th>Parts</th>
+                <th>Value</th>
+                <th>Starttime</th>
+                <th>Endtime</th>
+                <th>Duration</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for workOrder in workOrders %}
+            <tr>
+                <td><a href="{{ path('workorder_show', { 'id': workOrder.id }) }}">{{ workOrder.id }}</a></td>
+                <td>{% if workOrder.toDo %}{{ workOrder.toDo|join(', ') }}{% endif %}</td>
+                <td>{% if workOrder.parts %}{{ workOrder.parts|join(', ') }}{% endif %}</td>
+                <td>{{ workOrder.value }}</td>
+                <td>{% if workOrder.startTime %}{{ workOrder.startTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if workOrder.endTime %}{{ workOrder.endTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ workOrder.duration }}</td>
+                <td>{{ workOrder.status }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('workorder_show', { 'id': workOrder.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

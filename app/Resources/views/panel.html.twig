@@ -1,0 +1,71 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#">CarShopAPP</a>
+                    </li>
+                    <li>
+                        <a href="#">Profile</a>
+                    </li>
+                    <li class="disabled">
+                        <a href="#">Messages</a>
+                    </li>
+                    <li class="pull-right">
+                        <a href="{{ path("fos_user_security_logout") }}">Logout</a>
+                    </li>
+                    <li class="dropdown pull-right">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Menu<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Action</a>
+                            </li>
+                            <li>
+                                <a href="#">Action2</a>
+                            </li>
+                            <li>
+                                <a href="#">Action3</a>
+                            </li>
+                            <li class="divider">
+                            </li>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="btn-group btn-group-vertical btn-group-lg">
+
+                    <button class="btn btn-default" type="button">
+                        <em class="glyphicon glyphicon-align-center"></em> Customers
+                    </button>
+                    <button class="btn btn-default" type="button">
+                        <em class="glyphicon glyphicon-align-center"></em> Vehicles
+                    </button>
+                    <button class="btn btn-default" type="button">
+                        <em class="glyphicon glyphicon-align-center"></em> Work Orders
+                    </button>
+                    <button class="btn btn-default" type="button">
+                        <em class="glyphicon glyphicon-align-center"></em> Employees
+                    </button>
+                    <button class="btn btn-default" type="button">
+                        <em class="glyphicon glyphicon-align-center"></em> Reports
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-10">
+                {% block mainbox %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

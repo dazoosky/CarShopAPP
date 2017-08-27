@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Vehicles list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Enginecapacity</th>
+                <th>Fuel</th>
+                <th>Enginecode</th>
+                <th>Body</th>
+                <th>Insurancedate</th>
+                <th>Survaydate</th>
+                <th>Vin</th>
+                <th>Plateno</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vehicle in vehicles %}
+            <tr>
+                <td><a href="{{ path('vehicle_show', { 'id': vehicle.id }) }}">{{ vehicle.id }}</a></td>
+                <td>{{ vehicle.type }}</td>
+                <td>{{ vehicle.make }}</td>
+                <td>{{ vehicle.model }}</td>
+                <td>{{ vehicle.year }}</td>
+                <td>{{ vehicle.engineCapacity }}</td>
+                <td>{{ vehicle.fuel }}</td>
+                <td>{{ vehicle.engineCode }}</td>
+                <td>{{ vehicle.body }}</td>
+                <td>{% if vehicle.insuranceDate %}{{ vehicle.insuranceDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if vehicle.survayDate %}{{ vehicle.survayDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ vehicle.vIN }}</td>
+                <td>{{ vehicle.plateNo }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('vehicle_show', { 'id': vehicle.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Workstation</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ workStation.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ workStation.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('workstation_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

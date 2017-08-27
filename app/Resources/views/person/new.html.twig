@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 well">
+            <div class="col-md-2 col-md-offset-1">
+                <h1>Person creation</h1>
+
+                {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" value="Create" />
+                {{ form_end(form) }}
+
+                <ul>
+                    <li>
+                        <a href="{{ path('person_index') }}">Back to the list</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

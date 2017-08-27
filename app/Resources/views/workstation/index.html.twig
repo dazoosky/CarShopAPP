@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Workstations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for workStation in workStations %}
+            <tr>
+                <td><a href="{{ path('workstation_show', { 'id': workStation.id }) }}">{{ workStation.id }}</a></td>
+                <td>{{ workStation.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('workstation_show', { 'id': workStation.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}
