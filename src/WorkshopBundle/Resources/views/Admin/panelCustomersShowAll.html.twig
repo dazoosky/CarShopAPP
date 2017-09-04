@@ -1,0 +1,57 @@
+{% extends "::panel.html.twig" %}
+
+{% block mainbox %}
+    <div class="col-md-6">
+        <h1>Lista klientów</h1>
+
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Street</th>
+                <th>Localno</th>
+                <th>Postcode</th>
+                <th>City</th>
+                <th>Phoneno</th>
+                <th>Nip</th>
+                <th>Customer</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for person in people %}
+                <tr>
+                    <td><a href="{{ path('person_show', { 'id': person.id }) }}">{{ person.id }}</a></td>
+                    <td>{{ person.name }}</td>
+                    <td>{{ person.surname }}</td>
+                    <td>{{ person.street }}</td>
+                    <td>{{ person.localno }}</td>
+                    <td>{{ person.postcode }}</td>
+                    <td>{{ person.city }}</td>
+                    <td>{{ person.phoneno }}</td>
+                    <td>{{ person.nip }}</td>
+                    <td>{{ person.customer }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('person_show', { 'id': person.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('person_edit', { 'id': person.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                <a href="{{ path('person_new') }}">Create a new person</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

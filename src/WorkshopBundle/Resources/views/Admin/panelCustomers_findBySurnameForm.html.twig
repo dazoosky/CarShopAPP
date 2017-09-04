@@ -1,0 +1,14 @@
+{% extends "::panel.html.twig" %}
+
+{% block mainbox %}
+    <div class="col-md-6">
+        <h2>Find by surname</h2>
+            <div>
+                <form method="POST" action="{{ path("adminPanel_customers_findBySurname") }}">
+                    Surname:
+                    <input type="text" maxlength="100" name="surname"/>
+                    <input type="submit" value="Szukaj"/>
+                 </form>
+            </div>
+    </div>
+{% endblock %}

@@ -19,6 +19,11 @@ class Person
     private $user;
 
     /**
+     * @ORM\OneToMany(targetEntity="Vehicle", mappedBy="person")
+     */
+    private $vehicles;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -82,6 +87,13 @@ class Person
      * @ORM\Column(name="nip", type="string", nullable=true)
      */
     private $nip;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="customer", type="integer", nullable=false, options={"default":1})
+     */
+    private $customer;
 
 
     /**
@@ -299,5 +311,91 @@ class Person
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set customer
+     *
+     * @param integer $customer
+     * @return Person
+     */
+    public function setCustomer($customer)
+    {
+        $this->customer = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Get customer
+     *
+     * @return integer 
+     */
+    public function getCustomer()
+    {
+        return $this->customer;
+    }
+
+    /**
+     * Set employee
+     *
+     * @param integer $employee
+     * @return Person
+     */
+    public function setEmployee($employee)
+    {
+        $this->employee = $employee;
+
+        return $this;
+    }
+
+    /**
+     * Get employee
+     *
+     * @return integer 
+     */
+    public function getEmployee()
+    {
+        return $this->employee;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->vehicles = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add vehicles
+     *
+     * @param \WorkshopBundle\Entity\Vehicle $vehicles
+     * @return Person
+     */
+    public function addVehicle(\WorkshopBundle\Entity\Vehicle $vehicles)
+    {
+        $this->vehicles[] = $vehicles;
+
+        return $this;
+    }
+
+    /**
+     * Remove vehicles
+     *
+     * @param \WorkshopBundle\Entity\Vehicle $vehicles
+     */
+    public function removeVehicle(\WorkshopBundle\Entity\Vehicle $vehicles)
+    {
+        $this->vehicles->removeElement($vehicles);
+    }
+
+    /**
+     * Get vehicles
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVehicles()
+    {
+        return $this->vehicles;
     }
 }

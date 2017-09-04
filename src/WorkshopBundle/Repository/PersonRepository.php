@@ -12,4 +12,11 @@ use Doctrine\ORM\EntityRepository;
  */
 class PersonRepository extends EntityRepository
 {
+    public function findCustomerBySurname($surname)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM WorkshopBundle:person p WHERE p.surname = :surname')->setParameter('surname', $surname)
+            ->getResult();
+    }
 }

@@ -3,10 +3,13 @@
 namespace WorkshopBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use WorkshopBundle\Entity\Person;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use WorkshopBundle\Entity\User;
 
 /**
  * Person controller.
@@ -20,6 +23,7 @@ class PersonController extends Controller
      *
      * @Route("/", name="person_index")
      * @Method("GET")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function indexAction()
     {
@@ -27,7 +31,7 @@ class PersonController extends Controller
 
         $people = $em->getRepository('WorkshopBundle:Person')->findAll();
 
-        return $this->render('WorkshopBundle:Admin:panelCustomersShowAll.html.twig', array(
+        return $this->render('person/index.html.twig', array(
             'people' => $people,
         ));
     }
@@ -37,15 +41,19 @@ class PersonController extends Controller
      *
      * @Route("/new", name="person_new")
      * @Method({"GET", "POST"})
-     * @Security("has_role('ROLE_ADMIN')")
      */
     public function newAction(Request $request)
     {
         $person = new Person();
         $form = $this->createForm('WorkshopBundle\Form\PersonType', $person);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
+            $user = $this->container->get('security.context')->getToken()->getUser();
+            if (!$user instanceof User) {
+                    return $this->redirectToRoute('fos_user_security_login');
+                }
+            $person->setUser($user);
+            $person->setCustomer(true);
             $em = $this->getDoctrine()->getManager();
             $em->persist($person);
             $em->flush();
@@ -53,7 +61,7 @@ class PersonController extends Controller
             return $this->redirectToRoute('person_show', array('id' => $person->getId()));
         }
 
-        return $this->render('WorkshopBundle:Admin:panelCustomers_addCustomer.html.twig', array(
+        return $this->render('person/new.html.twig', array(
             'person' => $person,
             'form' => $form->createView(),
         ));
@@ -135,4 +143,16 @@ class PersonController extends Controller
             ->getForm()
         ;
     }
+
+
+
+//    /**
+//     * @Route("/findBySurname", name="person_findBySurname")
+//     * @Security("has_role('ROLE_ADMIN')")
+//     */
+//    public function findPersonBySurnameAction($surname) {
+//        $customer = $this->getDoctrine()->getRepository(Person::class)->findCustomerBySurname($surname);
+//        return $customer;
+//    }
+
 }

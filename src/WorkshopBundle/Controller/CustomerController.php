@@ -13,7 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class CustomerController extends Controller {
 
     /**
-     * @Route("/customerPanel")
+     * @Route("/customerPanel", name="customerPanel")
      * @Security("has_role('ROLE_CUSTOMER')")
      */
     public function customerPanelAction()

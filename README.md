@@ -1,4 +1,4 @@
 CarShopAPP
 ==========
 
-A Symfony project created on August 26, 2017, 4:34 pm.
+Aplikacja do zarządzania pracą i kontaktem z klientami dla warsztatu samochodowego.

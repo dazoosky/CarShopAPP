@@ -10,8 +10,13 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="vehicle")
  * @ORM\Entity(repositoryClass="WorkshopBundle\Repository\VehicleRepository")
  */
-class Vehicle
-{
+class Vehicle {
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Person", inversedBy="vehicles")
+     * @ORM\JoinColumn(name="owner_id", referencedColumnName="id")
+     */
+    private $owner;
 
     /**
      * @var int
@@ -391,5 +396,28 @@ class Vehicle
     public function getPlateNo()
     {
         return $this->plateNo;
+    }
+
+    /**
+     * Set owner
+     *
+     * @param \WorkshopBundle\Entity\Person $owner
+     * @return Vehicle
+     */
+    public function setOwner(\WorkshopBundle\Entity\Person $owner = null)
+    {
+        $this->owner = $owner;
+
+        return $this;
+    }
+
+    /**
+     * Get owner
+     *
+     * @return \WorkshopBundle\Entity\Person 
+     */
+    public function getOwner()
+    {
+        return $this->owner;
     }
 }

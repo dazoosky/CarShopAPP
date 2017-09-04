@@ -6,15 +6,14 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PersonType extends AbstractType
+class VehicleType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('surname')->add('street')->add('localno')->add('postcode')->add('city')->add('phoneno')->add('nip')->add('user')->add('customer');
-        // ,ChoiceType::class, array('choices'  => array('Tak' => true, 'Nie' => false),)
+        $builder->add('type')->add('make')->add('model')->add('year')->add('engineCapacity')->add('fuel')->add('engineCode')->add('body')->add('insuranceDate')->add('survayDate')->add('vIN')->add('plateNo')->add('owner');
     }
     
     /**
@@ -23,7 +22,7 @@ class PersonType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'WorkshopBundle\Entity\Person'
+            'data_class' => 'WorkshopBundle\Entity\Vehicle'
         ));
     }
 
@@ -32,7 +31,7 @@ class PersonType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'workshopbundle_person';
+        return 'workshopbundle_vehicle';
     }
 
 

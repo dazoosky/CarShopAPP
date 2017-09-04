@@ -1,0 +1,24 @@
+{% extends "::panel.html.twig" %}
+
+{% block mainbox %}
+    <div class="col-md-6">
+        <h2>Pojazdy</h2>
+        <ul>
+            <li>
+                <a href="{{ path("adminPanel_vehicles_all") }}">Wszystkie pojazdy</a><br>
+            </li>
+            <li>
+                <a href="{{ path("adminPanel_customers_findBySurnameForm") }}">Wyszukaj po właścicielu</a><br>
+            </li>
+            <li>
+                <a href="{{ path("adminPanel_customers_findBySurnameForm") }}">Wyszukaj po VIN</a><br>
+            </li>
+            <li>
+                <a href="{{ path("adminPanel_customers_findBySurnameForm") }}">Wyszukaj po rejestracji</a><br>
+            </li>
+            <li>
+                <a href="{{ path("vehicle_new") }}">Dodaj pojazd</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

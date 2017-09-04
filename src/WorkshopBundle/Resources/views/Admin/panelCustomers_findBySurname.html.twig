@@ -1,0 +1,54 @@
+{% extends "::panel.html.twig" %}
+
+{% block mainbox %}
+    <div class="col-md-6">
+        <h2>Find by surname</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Street</th>
+                    <th>Localno</th>
+                    <th>Postcode</th>
+                    <th>City</th>
+                    <th>Phoneno</th>
+                    <th>Nip</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for customer in cust %}
+                <tr>
+                    <td><a href="{{ path('person_show', { 'id': customer.id }) }}">{{ customer.id }}</a></td>
+                    <td>{{ customer.name }}</td>
+                    <td>{{ customer.surname }}</td>
+                    <td>{{ customer.street }}</td>
+                    <td>{{ customer.localno }}</td>
+                    <td>{{ customer.postcode }}</td>
+                    <td>{{ customer.city }}</td>
+                    <td>{{ customer.phoneno }}</td>
+                    <td>{{ customer.nip }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('person_show', { 'id': customer.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('person_edit', { 'id': customer.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    <a href="{{ path('person_new') }}">Create a new person</a>
+                </li>
+            </ul>
+    </div>
+{% endblock %}

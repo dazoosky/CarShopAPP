@@ -1,7 +1,18 @@
 {% extends "::panel.html.twig" %}
 
 {% block mainbox %}
-    <div>
-        Welcome to admin panel
+    <div class="col-md-6">
+        <h2>Klienci</h2>
+        <ul>
+            <li>
+                <a href="{{ path("adminPanel_customers_all") }}">Wszyscy klienci</a><br>
+            </li>
+            <li>
+                <a href="{{ path("adminPanel_customers_findBySurnameForm") }}">Wyszukaj po nazwisku</a><br>
+            </li>
+            <li>
+                <a href="{{ path("person_new") }}">Dodaj klienta</a>
+            </li>
+        </ul>
     </div>
 {% endblock %}
