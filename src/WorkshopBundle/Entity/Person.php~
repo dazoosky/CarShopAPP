@@ -398,4 +398,9 @@ class Person
     {
         return $this->vehicles;
     }
+
+    public function __toString() {
+        $name = $this->surname.' '.$this->name;
+        return $name;
+    }
 }

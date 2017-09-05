@@ -14,9 +14,14 @@ class Vehicle {
 
     /**
      * @ORM\ManyToOne(targetEntity="Person", inversedBy="vehicles")
-     * @ORM\JoinColumn(name="owner_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="owner_id", referencedColumnName="id", nullable=false)
      */
     private $owner;
+
+    /**
+     * @ORM\OneToMany(targetEntity="WorkOrder", mappedBy="vehicle")
+     */
+    private $order;
 
     /**
      * @var int
@@ -100,9 +105,9 @@ class Vehicle {
     /**
      * @var string
      *
-     * @ORM\Column(name="VIN", type="string", length=20)
+     * @ORM\Column(name="vin", type="string", length=20)
      */
-    private $vIN;
+    private $vin;
 
     /**
      * @var string
@@ -353,26 +358,26 @@ class Vehicle {
     }
 
     /**
-     * Set vIN
+     * Set vin
      *
-     * @param string $vIN
+     * @param string $vin
      * @return Vehicle
      */
-    public function setVIN($vIN)
+    public function setvin($vin)
     {
-        $this->vIN = $vIN;
+        $this->vin = $vin;
 
         return $this;
     }
 
     /**
-     * Get vIN
+     * Get vin
      *
      * @return string 
      */
-    public function getVIN()
+    public function getvin()
     {
-        return $this->vIN;
+        return $this->vin;
     }
 
     /**
@@ -419,5 +424,52 @@ class Vehicle {
     public function getOwner()
     {
         return $this->owner;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->order = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add order
+     *
+     * @param \WorkshopBundle\Entity\WorkOrder $order
+     * @return Vehicle
+     */
+    public function addOrder(\WorkshopBundle\Entity\WorkOrder $order)
+    {
+        $this->order[] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Remove order
+     *
+     * @param \WorkshopBundle\Entity\WorkOrder $order
+     */
+    public function removeOrder(\WorkshopBundle\Entity\WorkOrder $order)
+    {
+        $this->order->removeElement($order);
+    }
+
+    /**
+     * Get order
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+
+    public function __toString()
+    {
+        $vehicle = $this->plateNo.' '.$this->getMake().' '.$this->getModel();
+        return $vehicle;
+        // TODO: Implement __toString() method.
     }
 }

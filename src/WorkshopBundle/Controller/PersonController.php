@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Person controller.
  *
- * @Route("person")
+ * @Route("admin/person")
  */
 class PersonController extends Controller
 {
@@ -27,7 +27,7 @@ class PersonController extends Controller
 
         $people = $em->getRepository('WorkshopBundle:Person')->findAll();
 
-        return $this->render('WorkshopBundle:Admin:panelCustomersShowAll.html.twig', array(
+        return $this->render('WorkshopBundle:Admin:panelUsers.html.twig', array(
             'people' => $people,
         ));
     }
@@ -69,7 +69,7 @@ class PersonController extends Controller
     {
         $deleteForm = $this->createDeleteForm($person);
 
-        return $this->render('person/show.html.twig', array(
+        return $this->render('WorkshopBundle:Admin:panelCustomers_show.html.twig', array(
             'person' => $person,
             'delete_form' => $deleteForm->createView(),
         ));

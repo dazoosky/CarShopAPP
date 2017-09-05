@@ -2,17 +2,15 @@
 
 namespace WorkshopBundle\Controller;
 
-use WorkshopBundle\Entity\Vehicle;
 use WorkshopBundle\Entity\WorkOrder;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
-use WorkshopBundle\WorkshopBundle;
 
 /**
  * Workorder controller.
  *
- * @Route("admin/workorder")
+ * @Route("workorder")
  */
 class WorkOrderController extends Controller
 {
@@ -28,7 +26,7 @@ class WorkOrderController extends Controller
 
         $workOrders = $em->getRepository('WorkshopBundle:WorkOrder')->findAll();
 
-        return $this->render('WorkshopBundle:Admin:panelOrders_showAll.html.twig', array(
+        return $this->render('workorder/index.html.twig', array(
             'workOrders' => $workOrders,
         ));
     }
@@ -68,9 +66,8 @@ class WorkOrderController extends Controller
     public function showAction(WorkOrder $workOrder)
     {
         $deleteForm = $this->createDeleteForm($workOrder);
-        $workOrder->setToDo(unserialize($workOrder->getToDo()));
 
-        return $this->render('WorkshopBundle:Admin:panelOrders_showOrder.html.twig', array(
+        return $this->render('workorder/show.html.twig', array(
             'workOrder' => $workOrder,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -136,93 +133,4 @@ class WorkOrderController extends Controller
             ->getForm()
         ;
     }
-
-    /**
-     * Creates a new workOrder entity for specific vehicle.
-     *
-     * @Route("/vehicle/new/{id}", name="vehicle_new_order")
-     * @Method({"GET", "POST"})
-     */
-    public function vehicleNewOrderAction(Request $request, $id)
-    {
-        $workOrder = new Workorder();
-        $form = $this->createForm('WorkshopBundle\Form\WorkOrderType', $workOrder);
-        $form->remove('vehicleId');
-        $form->handleRequest($request);
-        $todo = $this->handleCustomFields($request);
-
-//        $x = $this->get('request')->request->get('1');
-        if ($form->isSubmitted() && $form->isValid()) {
-            $vehicle = $this->getDoctrine()->getRepository(Vehicle::class)->findById($id);
-            $workOrder->setVehicleId($vehicle[0]);
-            $workOrder->setToDo(serialize($todo));
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($workOrder);
-            $em->flush();
-
-            return $this->redirectToRoute('workorder_show', array('id' => $workOrder->getId()));
-        }
-
-        return $this->render('WorkshopBundle:Admin:panelOrders_newOrder.html.twig', array(
-            'workOrder' => $workOrder,
-            'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * @Route("/ordersInProgress/", name="adminPanel_orders_ordersInProgress")
-     * @Method("GET")
-     */
-    public function findOrdersInProgressAction() {
-        $em = $this->getDoctrine()->getManager();
-        $status = $em->getRepository('WorkshopBundle:OrderStatus')->findById(2);
-        $workOrders = $em->getRepository('WorkshopBundle:WorkOrder')->findByStatus($status);
-
-        return $this->render('WorkshopBundle:Admin:panelOrders_showAll.html.twig', array(
-            'workOrders' => $workOrders,
-        ));
-    }
-
-    /**
-     * @Route("/ordersNew/", name="adminPanel_orders_new")
-     * @Method("GET")
-     */
-    public function findOrdersNewAction() {
-        $em = $this->getDoctrine()->getManager();
-        $status = $em->getRepository('WorkshopBundle:OrderStatus')->findById(1);
-        $workOrders = $em->getRepository('WorkshopBundle:WorkOrder')->findByStatus($status);
-
-        return $this->render('WorkshopBundle:Admin:panelOrders_showAll.html.twig', array(
-            'workOrders' => $workOrders,
-        ));
-    }
-
-    private function handleCustomFields(Request $request) {
-        $array['Silnik']= $this->get('request')->request->get('engine');
-        $array['Układ napędowy'] = $this->get('request')->request->get('drivetrain');
-        $array['Hamulce'] = $this->get('request')->request->get('brakes');
-        $array['Zawieszenie'] = $this->get('request')->request->get('suspension');
-        $array['Układ elektryczny'] = $this->get('request')->request->get('electric');
-        $array['Nadwozie'] = $this->get('request')->request->get('body');
-        $array['Podwozie'] = $this->get('request')->request->get('frame');
-        $array['Wnętrze'] = $this->get('request')->request->get('interior');
-        $array['Koła'] = $this->get('request')->request->get('wheels');
-        $ac = $this->get('request')->request->get('aircon');
-        $ins = $this->get('request')->request->get('inspection');
-        if ($ac == null) {
-            $array['Klimatyzacja'] = 'NIE';
-        }
-        else {
-            $array['Klimatyzacja'] = 'TAK';
-        }
-        if ($ins == null) {
-            $array['Przegląd ogólny'] = 'NIE';
-        }
-        else {
-            $array['Przegląd ogólny'] = 'TAK';
-        }
-        return $array;
-    }
-
-
 }

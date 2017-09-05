@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Vehicle controller.
  *
- * @Route("vehicle")
+ * @Route("admin/vehicle")
  */
 class VehicleController extends Controller
 {
@@ -52,7 +52,7 @@ class VehicleController extends Controller
             return $this->redirectToRoute('vehicle_show', array('id' => $vehicle->getId()));
         }
 
-        return $this->render('WorkshopBundle:Admin:panelVehicles_addVehicle.html.twig', array(
+        return $this->render('WorkshopBundle:Admin:panelVehicles_addCustomer.html.twig', array(
             'vehicle' => $vehicle,
             'form' => $form->createView(),
         ));
@@ -68,7 +68,7 @@ class VehicleController extends Controller
     {
         $deleteForm = $this->createDeleteForm($vehicle);
 
-        return $this->render('vehicle/show.html.twig', array(
+        return $this->render('WorkshopBundle:Admin:panelVehicles_show.html.twig', array(
             'vehicle' => $vehicle,
             'delete_form' => $deleteForm->createView(),
         ));

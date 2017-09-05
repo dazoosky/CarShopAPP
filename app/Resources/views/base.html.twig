@@ -10,10 +10,27 @@
     <meta name="description" content="WebAPP for Car Workshops">
     <meta name="author" content="Dazoosky">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('clock').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
 </head>
-<body>
-<div class="container-fluid">
+<body onload="startTime()">
+<div class="container" style="height: 800px">
     <div class="row">
         <div class="col-md-12">
             <ul class="nav nav-tabs">
@@ -27,6 +44,7 @@
                 <li class="disabled">
                     <a href="#">Messages</a>
                 </li>
+
                 <li class="pull-right">
                     <a href="{{ path("fos_user_security_logout") }}">Logout</a>
                 </li>
@@ -49,6 +67,7 @@
                         </li>
 
                     </ul>
+
                 </li>
                 {% endif %}
             </ul>

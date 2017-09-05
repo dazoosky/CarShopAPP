@@ -1,1 +1,5 @@
 # Empty CSS file for your own CSS
+.fill {
+    min-height: 100%;
+    height: 100%;
+}

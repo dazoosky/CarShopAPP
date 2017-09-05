@@ -12,6 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class WorkOrder
 {
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Vehicle", inversedBy="orders")
+     * @ORM\JoinColumn(name="vehicle_id", referencedColumnName="id", nullable=false)
+     */
+    private $vehicleId;
+
     /**
      * @var int
      *

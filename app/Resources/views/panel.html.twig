@@ -1,26 +1,33 @@
 {% extends "::base.html.twig" %}
 
+
+
 {% block body %}
 
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2 well ">
                 <br>
                 <div class="btn-group btn-group-vertical btn-group-lg">
-
+                    <button type="button" class="btn btn-info"">
+                        Czas:<p id="clock"></p>
+                    </button>
                     <a href="{{ path("adminPanel_customers") }}" class="btn btn-default" type="button">
-                        <em class="glyphicon glyphicon-align-left"></em> Klienci
+                        <img src="{{ asset('img/icons/customers.png') }}"> Klienci
                     </a>
                     <a href="{{ path("adminPanel_vehicles") }}" class="btn btn-default" type="button">
-                        <em class="glyphicon glyphicon-align-left"></em> Pojazdy
+                        <img src="{{ asset('img/icons/vehicles.png') }}"> Pojazdy
+                    </a>
+                    <a href="{{ path('adminPanel_orders') }}" class="btn btn-default" type="button">
+                        <img src="{{ asset('img/icons/orders.png') }}"> Zlecenia
+                    </a>
+                    <a href="{{ path('adminPanel_workers') }}" class="btn btn-default" type="button">
+                        <img src="{{ asset('img/icons/workers.png') }}"> Pracownicy
+                    </a>
+                    <a href="{{ path('adminPanel_users_all') }}" class="btn btn-default" type="button">
+                        <img src="{{ asset('img/icons/users.png') }}"> Użytkownicy
                     </a>
                     <button class="btn btn-default" type="button">
-                        <em class="glyphicon glyphicon-align-left"></em> Zlecenia
-                    </button>
-                    <button class="btn btn-default" type="button">
-                        <em class="glyphicon glyphicon-align-left"></em> Pracownicy
-                    </button>
-                    <button class="btn btn-default" type="button">
-                        <em class="glyphicon glyphicon-align-left"></em> Reports
+                        <img src="{{ asset('img/icons/reports.png') }}"> Reports
                     </button>
                 </div>
             </div>

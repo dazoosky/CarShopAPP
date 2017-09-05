@@ -1,16 +1,21 @@
 {% extends "::panel.html.twig" %}
 
 {% block mainbox %}
-    <h1>Vehicle creation</h1>
+    <div class="col-md-8">
+         <div class="col-md-2"></div>
+         <div class="col-md-4">
+            <h1>Dodaj pojazd</h1>
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <input type="submit" value="Create" />
-    {{ form_end(form) }}
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <input type="submit" value="Create" />
+            {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('vehicle_index') }}">Back to the list</a>
-        </li>
-    </ul>
+            <ul>
+                <li>
+                    <a href="{{ path('vehicle_index') }}">Back to the list</a>
+                </li>
+            </ul>
+         </div>
+    </div>
 {% endblock %}

@@ -1,0 +1,85 @@
+{% extends '::panel.html.twig' %}
+
+{% block mainbox %}
+
+            <h1>Pojazd</h1>
+
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ vehicle.id }}</td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td>{{ vehicle.type }}</td>
+                </tr>
+                <tr>
+                    <th>Make</th>
+                    <td>{{ vehicle.make }}</td>
+                </tr>
+                <tr>
+                    <th>Model</th>
+                    <td>{{ vehicle.model }}</td>
+                </tr>
+                <tr>
+                    <th>Year</th>
+                    <td>{{ vehicle.year }}</td>
+                </tr>
+                <tr>
+                    <th>Enginecapacity</th>
+                    <td>{{ vehicle.engineCapacity }}</td>
+                </tr>
+                <tr>
+                    <th>Fuel</th>
+                    <td>{{ vehicle.fuel }}</td>
+                </tr>
+                <tr>
+                    <th>Enginecode</th>
+                    <td>{{ vehicle.engineCode }}</td>
+                </tr>
+                <tr>
+                    <th>Body</th>
+                    <td>{{ vehicle.body }}</td>
+                </tr>
+                <tr>
+                    <th>Insurancedate</th>
+                    <td>{% if vehicle.insuranceDate %}{{ vehicle.insuranceDate|date('Y-m-d') }}{% endif %}</td>
+                </tr>
+                <tr>
+                    <th>Survaydate</th>
+                    <td>{% if vehicle.survayDate %}{{ vehicle.survayDate|date('Y-m-d') }}{% endif %}</td>
+                </tr>
+                <tr>
+                    <th>Vin</th>
+                    <td>{{ vehicle.vIN }}</td>
+                </tr>
+                <tr>
+                    <th>Plateno</th>
+                    <td>{{ vehicle.plateNo }}</td>
+                </tr>
+                <tr>
+                    <th>Owner</th>
+                    <td><a href="{{ path('person_show', {'id': vehicle.owner.id}) }}">{{ vehicle.owner.name }} {{ vehicle.owner.surname }}</a></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <ul>
+                <li>
+                    <a href="{{ path('vehicle_index') }}">Back to the list</a>
+                </li>
+                <li>
+                    <a href="{{ path('vehicle_edit', { 'id': vehicle.id }) }}">Edit</a>
+                </li>
+                <li>
+                    <a href="{{ path('vehicle_new_order', { 'id': vehicle.id }) }}">Dodaj zlecenie</a>
+                </li>
+                <li>
+                    {{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+
+{% endblock %}

@@ -19,4 +19,18 @@ class PersonRepository extends EntityRepository
                 'SELECT p FROM WorkshopBundle:person p WHERE p.surname = :surname')->setParameter('surname', $surname)
             ->getResult();
     }
+
+    public function findAllCustomers()
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM WorkshopBundle:person p WHERE p.customer = TRUE')->getResult();
+    }
+
+    public function findAllWorkers()
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM WorkshopBundle:person p WHERE p.customer = FALSE')->getResult();
+    }
 }

@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
 use WorkshopBundle\Entity\Person;
+use WorkshopBundle\Entity\Vehicle;
 use WorkshopBundle\Repository\PersonRepository;
 
 /**
@@ -28,7 +29,7 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/customers", name="adminPanel_customers")
+     * @Route("/customersMenu", name="adminPanel_customers")
      * @Security("has_role('ROLE_ADMIN')")
      */
     public function panelCustomersAction()
@@ -37,21 +38,45 @@ class AdminController extends Controller
             // ...
         ));
     }
+
+    /**
+     * @Route("/ordersMenu", name="adminPanel_orders")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function panelOrdersAction()
+    {
+        return $this->render('WorkshopBundle:Admin:panelOrders.html.twig', array(
+            // ...
+        ));
+    }
+
     /**
      * @Route("/customers/all", name="adminPanel_customers_all")
      * @Security("has_role('ROLE_ADMIN')")
      */
     public function panelCustomersAllAction() {
-        return $this->redirectToRoute("person_index");
+        $customers = $this->getDoctrine()->getRepository(Person::class)->findAllCustomers();
+        return $this->render("WorkshopBundle:Admin:panelCustomersShowAll.html.twig", array('customers'=>$customers));
 
     }
+
+    /**
+     * @Route("/workersMenu", name="adminPanel_workers")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function panelWorkersAction() {
+        $workers = $this->getDoctrine()->getRepository(Person::class)->findAllWorkers();
+        return $this->render("WorkshopBundle:Admin:panelWorkers.html.twig", array('workers'=>$workers));
+
+    }
+
 
     /**
      * @Route("/customers/searchBySurname", name="adminPanel_customers_findBySurnameForm")
      * @Security("has_role('ROLE_ADMIN')")
      * @Method("GET")
      */
-    public function panelCustomersSearchBySurnameFormAction() {
+    public function panelCustomerFindPersonBySurnameFormAction() {
         return $this->render("WorkshopBundle:Admin:panelCustomers_findBySurnameForm.html.twig");
     }
 
@@ -65,18 +90,18 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/findBySurname", name="adminPanel_customers_findBySurname")
+     * @Route("/findCustomerBySurname", name="adminPanel_customers_findBySurname")
      * @Security("has_role('ROLE_ADMIN')")
      * @Method("POST")
      */
-    public function panelCustomerFindPersonBySurnameFormAction(Request $request) {
+    public function panelCustomerFindPersonBySurnameAction(Request $request) {
         $surname = $request->request->get('surname');
         $customer = $this->getDoctrine()->getRepository(Person::class)->findCustomerBySurname($surname);
         return $this->render("WorkshopBundle:Admin:panelCustomers_findBySurname.html.twig", array('cust'=>$customer));
     }
 
     /**
-     * @Route("/vehicles", name="adminPanel_vehicles")
+     * @Route("/vehiclesMenu", name="adminPanel_vehicles")
      * @Security("has_role('ROLE_ADMIN')")
      */
     public function panelVehiclesAction()
@@ -104,4 +129,77 @@ class AdminController extends Controller
 
     }
 
+    /**
+     * @Route("/vehicles/findByOwner", name="adminPanel_vehicles_findByOwnerForm")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Method("GET")
+     */
+    public function panelVehicleFindByOwnerFormAction() {
+        return $this->render("WorkshopBundle:Admin:panelVehicles_findByOwnerForm.html.twig");
+    }
+
+
+    /**
+     * @Route("/vehicles/findVehicleByOwner", name="adminPanel_vehicles_findByOwner")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Method("POST")
+     */
+    public function panelVehicleFindByOwnerAction(Request $request) {
+        $owner = $request->request->get('owner');
+        $vehicles = $this->getDoctrine()->getRepository(Vehicle::class)->findVehicleByOwner($owner);
+        return $this->render("WorkshopBundle:Admin:panelVehicles_findByResult.html.twig", array('vehicles'=>$vehicles));
+    }
+
+    /**
+     * @Route("/vehicles/findByVin", name="adminPanel_vehicles_findByVinForm")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Method("GET")
+     */
+    public function panelVehicleFindByVinFormAction() {
+        return $this->render("WorkshopBundle:Admin:panelVehicles_findByVinForm.html.twig");
+    }
+
+
+    /**
+     * @Route("/vehicles/findByVin", name="adminPanel_vehicles_findByVin")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Method("POST")
+     */
+    public function panelVehicleFindByVinAction(Request $request) {
+        $vin = $request->request->get('vin');
+        $vehicles = $this->getDoctrine()->getRepository(Vehicle::class)->findVehicleByVin($vin);
+        return $this->render("WorkshopBundle:Admin:panelVehicles_findByResult.html.twig", array('vehicles'=>$vehicles));
+    }
+
+
+    /**
+     * @Route("/vehicles/findByPlateno", name="adminPanel_vehicles_findByPlatenoForm")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Method("GET")
+     */
+    public function panelVehicleFindByPlatenoFormAction() {
+        return $this->render("WorkshopBundle:Admin:panelVehicles_findByPlatenoForm.html.twig");
+    }
+
+
+    /**
+     * @Route("/vehicles/findByPlateno", name="adminPanel_vehicles_findByPlateno")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Method("POST")
+     */
+    public function panelVehicleFindByPlatenoAction(Request $request) {
+        $plateno = $request->request->get('plateno');
+        $plateno = preg_replace('~\s~', '', $plateno);
+        $vehicles = $this->getDoctrine()->getRepository(Vehicle::class)->findVehicleByPlateno($plateno);
+        return $this->render("WorkshopBundle:Admin:panelVehicles_findByResult.html.twig", array('vehicles'=>$vehicles));
+    }
+
+    /**
+     * @Route("/users/all", name="adminPanel_users_all")
+     * @Security("has_role('ROLE_ADMIN')")
+     */
+    public function panelUsersAllAction() {
+        return $this->redirectToRoute("person_index");
+
+    }
 }

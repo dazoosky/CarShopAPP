@@ -12,4 +12,28 @@ use Doctrine\ORM\EntityRepository;
  */
 class VehicleRepository extends EntityRepository
 {
+
+    public function findVehicleByOwner($owner)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM WorkshopBundle:vehicle p WHERE p.owner = :owner')->setParameter('owner', $owner)
+            ->getResult();
+    }
+
+    public function findVehicleByVIN($vin)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM WorkshopBundle:vehicle p WHERE p.vin LIKE :vin')->setParameter('vin', $vin)
+            ->getResult();
+    }
+
+    public function findVehicleByPlateno($plateno)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM WorkshopBundle:vehicle p WHERE p.plateNo LIKE :plateno')->setParameter('plateno', $plateno)
+            ->getResult();
+    }
 }

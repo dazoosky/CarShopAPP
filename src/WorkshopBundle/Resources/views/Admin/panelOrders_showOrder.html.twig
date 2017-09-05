@@ -1,0 +1,65 @@
+{% extends '::panel.html.twig' %}
+
+{% block mainbox %}
+    <h1>Podgląd zlecenia</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+        <tr>
+            <th>Id zlecenia</th>
+            <td>{{ workOrder.id }}</td>
+        </tr>
+        <tr>
+            <th>Lista prac</th>
+            <td>{% if workOrder.toDo %}
+                <table class="table table-responsive">
+
+                    {% for key, value in workOrder.toDo %}
+                        <tr></tr><th>{{ key }}</th><td>{{ value }}</td></tr>
+                    {% endfor %}
+                {% endif %}
+            </table>
+            </td>
+
+        </tr>
+        <tr>
+            <th>Części</th>
+            <td>{% if workOrder.parts %}{{ workOrder.parts|join(', ') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Cena</th>
+            <td>{{ workOrder.value }}</td>
+        </tr>
+        <tr>
+            <th>Czas rozpoczęcia</th>
+            <td>{% if workOrder.startTime %}{{ workOrder.startTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Czas zakończenia</th>
+            <td>{% if workOrder.endTime %}{{ workOrder.endTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Czas trwania (min)</th>
+            <td>{{ workOrder.duration }}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{{ workOrder.status }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('workorder_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('workorder_edit', { 'id': workOrder.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

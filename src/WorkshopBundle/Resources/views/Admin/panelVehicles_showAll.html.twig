@@ -20,6 +20,7 @@
                         <th>Survaydate</th>
                         <th>Vin</th>
                         <th>Plateno</th>
+                        <th>Owner</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -39,6 +40,7 @@
                         <td>{% if vehicle.survayDate %}{{ vehicle.survayDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                         <td>{{ vehicle.vIN }}</td>
                         <td>{{ vehicle.plateNo }}</td>
+                        <td>{{ vehicle.owner }}</td>
                         <td>
                             <ul>
                                 <li>
@@ -46,6 +48,9 @@
                                 </li>
                                 <li>
                                     <a href="{{ path('vehicle_edit', { 'id': vehicle.id }) }}">edit</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('vehicle_new_order', { 'id': vehicle.id }) }}">Dodaj zlecenie</a>
                                 </li>
                             </ul>
                         </td>

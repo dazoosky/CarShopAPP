@@ -1,6 +1,7 @@
 {% extends "::panel.html.twig" %}
 
 {% block mainbox %}
+    <div class="col-md-6">
         <h1>Lista klientów</h1>
 
         <table class="table table-bordered">
@@ -20,7 +21,7 @@
             </tr>
             </thead>
             <tbody>
-            {% for person in customers %}
+            {% for person in workers %}
                 <tr>
                     <td><a href="{{ path('person_show', { 'id': person.id }) }}">{{ person.id }}</a></td>
                     <td>{{ person.name }}</td>
@@ -52,4 +53,5 @@
                 <a href="{{ path('person_new') }}">Create a new person</a>
             </li>
         </ul>
+    </div>
 {% endblock %}

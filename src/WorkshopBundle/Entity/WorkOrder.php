@@ -12,6 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class WorkOrder
 {
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Vehicle")
+     * @ORM\JoinColumn(name="vehicle_id", referencedColumnName="id", nullable=false)
+     */
+    private $vehicleId;
+
     /**
      * @var int
      *
@@ -20,6 +27,12 @@ class WorkOrder
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="OrderStatus")
+     * @ORM\JoinColumn(name="status_id", referencedColumnName="id", nullable=false)
+     */
+    private $status;
 
     /**
      * @var array
@@ -52,7 +65,7 @@ class WorkOrder
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="endTime", type="datetime", nullable=true)
+     * @ORM\Column(name="endTime", type="datetime")
      */
     private $endTime;
 
@@ -62,13 +75,6 @@ class WorkOrder
      * @ORM\Column(name="duration", type="integer")
      */
     private $duration;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="status", type="integer")
-     */
-    private $status;
 
 
     /**
@@ -240,5 +246,28 @@ class WorkOrder
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * Set vehicleId
+     *
+     * @param \WorkshopBundle\Entity\Vehicle $vehicleId
+     * @return WorkOrder
+     */
+    public function setVehicleId(\WorkshopBundle\Entity\Vehicle $vehicleId)
+    {
+        $this->vehicleId = $vehicleId;
+
+        return $this;
+    }
+
+    /**
+     * Get vehicleId
+     *
+     * @return \WorkshopBundle\Entity\Vehicle 
+     */
+    public function getVehicleId()
+    {
+        return $this->vehicleId;
     }
 }
