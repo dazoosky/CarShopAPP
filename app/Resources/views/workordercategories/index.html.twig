@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Workordercategories list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for workOrderCategory in workOrderCategories %}
+            <tr>
+                <td><a href="{{ path('workordercategories_show', { 'id': workOrderCategory.id }) }}">{{ workOrderCategory.id }}</a></td>
+                <td>{{ workOrderCategory.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('workordercategories_show', { 'id': workOrderCategory.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('workordercategories_edit', { 'id': workOrderCategory.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('workordercategories_new') }}">Create a new workOrderCategory</a>
+        </li>
+    </ul>
+{% endblock %}

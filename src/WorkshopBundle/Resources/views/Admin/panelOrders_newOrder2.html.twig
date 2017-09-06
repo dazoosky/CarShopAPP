@@ -1,7 +1,8 @@
 {% extends '::panel.html.twig' %}
 
 {% block mainbox %}
-
+    <div class="col-md-2"></div>
+    <div class="col-md-6">
         <h1>Nowe zlecenie</h1>
 
         {{ form_start(form) }}
@@ -106,6 +107,42 @@
             </table>
         </div>
         <div>
+            Silnik<br>
+            <textarea name="engine"></textarea>
+        </div>
+        <div>
+            Układ napędowy<br>
+            <textarea name="drivetrain"></textarea>
+        </div>
+        <div>
+            Układ hamulcowy<br>
+            <textarea name="brakes"></textarea>
+        </div>
+        <div>
+            Zawieszenie<br>
+            <textarea name="suspension"></textarea>
+        </div>
+        <div>
+            Układ elektryczny<br>
+            <textarea name="electric"></textarea>
+        </div>
+        <div>
+            Nadwozie<br>
+            <textarea name="body"></textarea>
+        </div>
+        <div>
+            Podwozie<br>
+            <textarea name="frame"></textarea>
+        </div>
+        <div>
+            Wnętrze<br>
+            <textarea name="interior"></textarea>
+        </div>
+        <div>
+            Koła<br>
+            <textarea name="wheels"></textarea>
+        </div>
+        <div>
             <input type="checkbox" name="aircon">Klimatyzacja<br>
             <input type="checkbox" name="inspection">Przegląd ogólny<br>
         </div>
@@ -120,4 +157,5 @@
                 <a href="{{ path('workorder_index') }}">Back to the list</a>
             </li>
         </ul>
+    </div>
 {% endblock %}

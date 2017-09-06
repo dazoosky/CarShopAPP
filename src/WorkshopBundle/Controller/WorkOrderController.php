@@ -147,9 +147,10 @@ class WorkOrderController extends Controller
     {
         $workOrder = new Workorder();
         $form = $this->createForm('WorkshopBundle\Form\WorkOrderType', $workOrder);
-        $form->remove('vehicleId');
+        $form->remove('vehicleId')->remove('value')->remove('duration');
         $form->handleRequest($request);
         $todo = $this->handleCustomFields($request);
+        $categories = $this->getDoctrine()->getRepository('WorkshopBundle:WorkOrderCategories')->findAll();
 
 //        $x = $this->get('request')->request->get('1');
         if ($form->isSubmitted() && $form->isValid()) {
@@ -165,6 +166,8 @@ class WorkOrderController extends Controller
 
         return $this->render('WorkshopBundle:Admin:panelOrders_newOrder.html.twig', array(
             'workOrder' => $workOrder,
+            'categories' => $categories,
+
             'form' => $form->createView(),
         ));
     }
