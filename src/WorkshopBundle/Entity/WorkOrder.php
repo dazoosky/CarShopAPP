@@ -14,7 +14,7 @@ class WorkOrder
 {
 
     /**
-     * @ORM\ManyToOne(targetEntity="Vehicle")
+     * @ORM\ManyToOne(targetEntity="Vehicle", inversedBy="order")
      * @ORM\JoinColumn(name="vehicle_id", referencedColumnName="id", nullable=false)
      */
     private $vehicleId;
@@ -269,5 +269,12 @@ class WorkOrder
     public function getVehicleId()
     {
         return $this->vehicleId;
+    }
+
+    public function __construct()
+    {
+        $this->setStartTime(new \DateTime());
+        $this->setEndTime(new \DateTime());
+        return $this;
     }
 }

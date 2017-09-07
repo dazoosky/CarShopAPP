@@ -52,7 +52,7 @@ class VehicleController extends Controller
             return $this->redirectToRoute('vehicle_show', array('id' => $vehicle->getId()));
         }
 
-        return $this->render('WorkshopBundle:Admin:panelVehicles_addCustomer.html.twig', array(
+        return $this->render('WorkshopBundle:Admin:panelVehicles_addVehicle.html.twig', array(
             'vehicle' => $vehicle,
             'form' => $form->createView(),
         ));

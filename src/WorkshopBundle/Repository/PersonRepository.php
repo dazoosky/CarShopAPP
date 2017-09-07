@@ -16,7 +16,7 @@ class PersonRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT p FROM WorkshopBundle:person p WHERE p.surname = :surname')->setParameter('surname', $surname)
+                'SELECT p FROM WorkshopBundle:person p WHERE p.surname LIKE :surname')->setParameter('surname', $surname)
             ->getResult();
     }
 

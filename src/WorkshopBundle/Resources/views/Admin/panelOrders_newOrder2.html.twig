@@ -1,161 +1,123 @@
 {% extends '::panel.html.twig' %}
 
 {% block mainbox %}
-    <div class="col-md-2"></div>
-    <div class="col-md-6">
-        <h1>Nowe zlecenie</h1>
 
-        {{ form_start(form) }}
-        <div>
-            <table class="table">
-                <tr>
-                    <th>Kategoria</th>
-                    <th>Opis czynności</th>
-                    <th>Czas trwania</th>
-                    <th>Koszt</th>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="1c">
-                            {% for cat in categories %}
+    <h1>Nowe zlecenie</h1>
+
+    {{ form_start(form) }}
+    <div>
+        <table class="table">
+            <tr>
+                <th>Kategoria</th>
+                <th>Opis czynności</th>
+                <th>Czas trwania</th>
+                <th>Koszt</th>
+            </tr>
+            <tr>
+                <td>
+                    <select name="1c">
+                        {% for cat in categories %}
                             <option value="{{ cat.name }}">{{ cat.namePL }}</option>
-                            {% endfor %}
-                        </select>
-                    </td>
-                    <td>
-                        <textarea name="1t"></textarea>
-                    </td>
-                    <td>
-                        <input type="number" name="1d" min="0" step="1">
-                    </td>
-                    <td>
-                        <input type="number" name="1p" min="0" step="0,01">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="2c">
-                            {% for cat in categories %}
-                                <option value="{{ cat.name }}">{{ cat.namePL }}</option>
-                            {% endfor %}
-                        </select>
-                    </td>
-                    <td>
-                        <textarea name="2t"></textarea>
-                    </td>
-                    <td>
-                        <input type="number" name="2d" min="0" step="2">
-                    </td>
-                    <td>
-                        <input type="number" name="2p" min="0" step="0,02">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="3c">
-                            {% for cat in categories %}
-                                <option value="{{ cat.name }}">{{ cat.namePL }}</option>
-                            {% endfor %}
-                        </select>
-                    </td>
-                    <td>
-                        <textarea name="3t"></textarea>
-                    </td>
-                    <td>
-                        <input type="number" name="3d" min="0" step="3">
-                    </td>
-                    <td>
-                        <input type="number" name="3p" min="0" step="0,03">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="4c">
-                            {% for cat in categories %}
-                                <option value="{{ cat.name }}">{{ cat.namePL }}</option>
-                            {% endfor %}
-                        </select>
-                    </td>
-                    <td>
-                        <textarea name="4t"></textarea>
-                    </td>
-                    <td>
-                        <input type="number" name="4d" min="0" step="4">
-                    </td>
-                    <td>
-                        <input type="number" name="4p" min="0" step="0,04">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="5c">
-                            {% for cat in categories %}
-                                <option value="{{ cat.name }}">{{ cat.namePL }}</option>
-                            {% endfor %}
-                        </select>
-                    </td>
-                    <td>
-                        <textarea name="5t"></textarea>
-                    </td>
-                    <td>
-                        <input type="number" name="5d" min="0" step="5">
-                    </td>
-                    <td>
-                        <input type="number" name="5p" min="0" step="0,05">
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div>
-            Silnik<br>
-            <textarea name="engine"></textarea>
-        </div>
-        <div>
-            Układ napędowy<br>
-            <textarea name="drivetrain"></textarea>
-        </div>
-        <div>
-            Układ hamulcowy<br>
-            <textarea name="brakes"></textarea>
-        </div>
-        <div>
-            Zawieszenie<br>
-            <textarea name="suspension"></textarea>
-        </div>
-        <div>
-            Układ elektryczny<br>
-            <textarea name="electric"></textarea>
-        </div>
-        <div>
-            Nadwozie<br>
-            <textarea name="body"></textarea>
-        </div>
-        <div>
-            Podwozie<br>
-            <textarea name="frame"></textarea>
-        </div>
-        <div>
-            Wnętrze<br>
-            <textarea name="interior"></textarea>
-        </div>
-        <div>
-            Koła<br>
-            <textarea name="wheels"></textarea>
-        </div>
-        <div>
-            <input type="checkbox" name="aircon">Klimatyzacja<br>
-            <input type="checkbox" name="inspection">Przegląd ogólny<br>
-        </div>
-        <div>
+                        {% endfor %}
+                    </select>
+                </td>
+                <td>
+                    <textarea name="1t"></textarea>
+                </td>
+                <td>
+                    <input type="number" name="1d" min="0" step="1" value="0" required>
+                </td>
+                <td>
+                    <input type="number" name="1p" min="0" step="0,01" value="0" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="2c">
+                        {% for cat in categories %}
+                            <option value="{{ cat.name }}">{{ cat.namePL }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+                <td>
+                    <textarea name="2t"></textarea>
+                </td>
+                <td>
+                    <input type="number" name="2d" min="0" step="2" value="0" required>
+                </td>
+                <td>
+                    <input type="number" name="2p" min="0" step="0,02" value="0" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="3c">
+                        {% for cat in categories %}
+                            <option value="{{ cat.name }}">{{ cat.namePL }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+                <td>
+                    <textarea name="3t"></textarea>
+                </td>
+                <td>
+                    <input type="number" name="3d" min="0" step="3" value="0" required>
+                </td>
+                <td>
+                    <input type="number" name="3p" min="0" step="0,03" value="0" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="4c">
+                        {% for cat in categories %}
+                            <option value="{{ cat.name }}">{{ cat.namePL }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+                <td>
+                    <textarea name="4t"></textarea>
+                </td>
+                <td>
+                    <input type="number" name="4d" min="0" step="4" value="0" required>
+                </td>
+                <td>
+                    <input type="number" name="4p" min="0" step="0,04" value="0" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="5c">
+                        {% for cat in categories %}
+                            <option value="{{ cat.name }}">{{ cat.namePL }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+                <td>
+                    <textarea name="5t"></textarea>
+                </td>
+                <td>
+                    <input type="number" name="5d" min="0" step="5" value="0" required>
+                </td>
+                <td>
+                    <input type="number" name="5p" min="0" step="0,05" value="0" required>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <input type="checkbox" name="aircon">Klimatyzacja<br>
+        <input type="checkbox" name="inspection">Przegląd ogólny<br>
+    </div>
+    <div>
         {{ form_widget(form) }}
 
         <input type="submit" value="Dodaj zlecenie" />
         {{ form_end(form) }}
-        </div>
-        <ul>
-            <li>
-                <a href="{{ path('workorder_index') }}">Back to the list</a>
-            </li>
-        </ul>
     </div>
+    <ul>
+        <li>
+            <a href="{{ path('workorder_index') }}">Back to the list</a>
+        </li>
+    </ul>
 {% endblock %}

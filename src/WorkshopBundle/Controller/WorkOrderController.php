@@ -7,6 +7,7 @@ use WorkshopBundle\Entity\WorkOrder;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use WorkshopBundle\Entity\WorkOrderItem;
 use WorkshopBundle\WorkshopBundle;
 
 /**
@@ -44,6 +45,7 @@ class WorkOrderController extends Controller
         $workOrder = new Workorder();
         $form = $this->createForm('WorkshopBundle\Form\WorkOrderType', $workOrder);
         $form->handleRequest($request);
+        $categories = $this->getDoctrine()->getRepository('WorkshopBundle:WorkOrderCategories')->findAll();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -55,6 +57,7 @@ class WorkOrderController extends Controller
 
         return $this->render('WorkshopBundle:Admin:panelOrders_newOrder.html.twig', array(
             'workOrder' => $workOrder,
+            'categories' => $categories,
             'form' => $form->createView(),
         ));
     }
@@ -87,15 +90,22 @@ class WorkOrderController extends Controller
         $deleteForm = $this->createDeleteForm($workOrder);
         $editForm = $this->createForm('WorkshopBundle\Form\WorkOrderType', $workOrder);
         $editForm->handleRequest($request);
-
+        $categories = $this->getDoctrine()->getRepository('WorkshopBundle:WorkOrderCategories')->findAll();
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $todo = $this->handleToDoItems($request);
+            $durAndPrice = $this->calculateTimeAndPrice($todo);
+            $workOrder->setToDo(serialize($todo));
+            $workOrder->setDuration($durAndPrice['duration']);
+            $workOrder->setValue($durAndPrice['price']);
 
+
+            $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('workorder_edit', array('id' => $workOrder->getId()));
         }
-
-        return $this->render('workorder/edit.html.twig', array(
+        $workOrder->setToDo(unserialize($workOrder->getToDo()));
+        return $this->render('WorkshopBundle:Admin:panelOrders_editOrder.html.twig', array(
             'workOrder' => $workOrder,
+            'categories' => $categories,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -147,30 +157,73 @@ class WorkOrderController extends Controller
     {
         $workOrder = new Workorder();
         $form = $this->createForm('WorkshopBundle\Form\WorkOrderType', $workOrder);
-        $form->remove('vehicleId')->remove('value')->remove('duration');
+        $form->remove('vehicleId');
         $form->handleRequest($request);
-        $todo = $this->handleCustomFields($request);
         $categories = $this->getDoctrine()->getRepository('WorkshopBundle:WorkOrderCategories')->findAll();
 
 //        $x = $this->get('request')->request->get('1');
         if ($form->isSubmitted() && $form->isValid()) {
-            $vehicle = $this->getDoctrine()->getRepository(Vehicle::class)->findById($id);
-            $workOrder->setVehicleId($vehicle[0]);
+            $vehicle = $this->getDoctrine()->getRepository(Vehicle::class)->findOneById($id);
+            $todo = $this->handleToDoItems($request, $workOrder);
+            $durAndPrice = $this->calculateTimeAndPrice($todo);
+            $workOrder->setVehicleId($vehicle);
             $workOrder->setToDo(serialize($todo));
+            $workOrder->setDuration($durAndPrice['duration']);
+            $workOrder->setValue($durAndPrice['price']);
             $em = $this->getDoctrine()->getManager();
             $em->persist($workOrder);
             $em->flush();
-
+            $this->addFlash(
+                'notice',
+                'Your changes were saved!'
+            );
             return $this->redirectToRoute('workorder_show', array('id' => $workOrder->getId()));
         }
-
+        $now = date('Y-m-d H:i', time());
         return $this->render('WorkshopBundle:Admin:panelOrders_newOrder.html.twig', array(
             'workOrder' => $workOrder,
             'categories' => $categories,
-
+            'now' => $now,
             'form' => $form->createView(),
         ));
     }
+
+    public function handleToDoItems(Request $request, $workOrder) {
+        $this->get('request')->request->get('engine');
+        $array = [];
+        $counter = 1;
+        for ($i = 0; $i < 4; $i++) {
+            if ($this->get('request')->request->get($counter.'t') != '') {
+                $item = new WorkOrderItem();
+                $item->setCategory($this->get('request')->request->get($counter . 'c'));
+                $item->setDescription($this->get('request')->request->get($counter . 't'));
+                $item->setDuration($this->get('request')->request->get($counter . 'd'));
+                $item->setPrice($this->get('request')->request->get($counter . 'p'));
+                $array[] = $item;
+            }
+            $counter++;
+        }
+        if ($array == array()) {
+            return $this->render('WorkshopBundle:Admin:panel.html.twig', array());
+                exit;
+        }
+        $ac = $this->get('request')->request->get('aircon');
+        $ins = $this->get('request')->request->get('inspection');
+
+
+        return $array;
+    }
+
+    public function calculateTimeAndPrice($array) {
+        $totalArray['price'] = 0;
+        $totalArray['duration'] = 0;
+        foreach ($array as $item) {
+            $totalArray['price'] += $item->getPrice();
+            $totalArray['duration'] += $item->getDuration();
+        }
+        return $totalArray;
+    }
+
 
     /**
      * @Route("/ordersInProgress/", name="adminPanel_orders_ordersInProgress")

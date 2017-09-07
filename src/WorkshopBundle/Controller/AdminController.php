@@ -56,7 +56,7 @@ class AdminController extends Controller
      */
     public function panelCustomersAllAction() {
         $customers = $this->getDoctrine()->getRepository(Person::class)->findAllCustomers();
-        return $this->render("WorkshopBundle:Admin:panelCustomersShowAll.html.twig", array('customers'=>$customers));
+        return $this->render("WorkshopBundle:Admin:panelCustomersShowAll.html.twig", array('customers'=>$customers, 'who'=>'klientów', 'showIfCustomer' => false));
 
     }
 
@@ -65,8 +65,8 @@ class AdminController extends Controller
      * @Security("has_role('ROLE_ADMIN')")
      */
     public function panelWorkersAction() {
-        $workers = $this->getDoctrine()->getRepository(Person::class)->findAllWorkers();
-        return $this->render("WorkshopBundle:Admin:panelWorkers.html.twig", array('workers'=>$workers));
+        $customers = $this->getDoctrine()->getRepository(Person::class)->findAllWorkers();
+        return $this->render("WorkshopBundle:Admin:panelCustomersShowAll.html.twig", array('customers'=>$customers, 'who'=>'pracowników', 'showIfCustomer' => false));
 
     }
 
@@ -97,7 +97,7 @@ class AdminController extends Controller
     public function panelCustomerFindPersonBySurnameAction(Request $request) {
         $surname = $request->request->get('surname');
         $customer = $this->getDoctrine()->getRepository(Person::class)->findCustomerBySurname($surname);
-        return $this->render("WorkshopBundle:Admin:panelCustomers_findBySurname.html.twig", array('cust'=>$customer));
+        return $this->render("WorkshopBundle:Admin:panelCustomersShowAll.html.twig", array('customers'=>$customer, 'who'=>'wyników', 'showIfCustomer' => false));
     }
 
     /**
@@ -121,11 +121,11 @@ class AdminController extends Controller
     }
 
     /**
-     * @Route("/customers/addCustomer", name="adminPanel_customers_addVehicle")
+     * @Route("/vehicles/add", name="adminPanel_vehicles_addVehicle")
      * @Security("has_role('ROLE_ADMIN')")
      */
     public function panelCustomersAddVehicleAction() {
-        return $this->render('WorkshopBundle:Admin:panelVehicles_addVehicles.html.twig', array());
+        return $this->render('WorkshopBundle:Admin:panelVehicles_addVehicle.html.twig', array());
 
     }
 
@@ -145,9 +145,10 @@ class AdminController extends Controller
      * @Method("POST")
      */
     public function panelVehicleFindByOwnerAction(Request $request) {
-        $owner = $request->request->get('owner');
+        $surname = trim($request->request->get('owner'));
+        $owner = $this->getDoctrine()->getRepository(Person::class)->findBySurname($surname);
         $vehicles = $this->getDoctrine()->getRepository(Vehicle::class)->findVehicleByOwner($owner);
-        return $this->render("WorkshopBundle:Admin:panelVehicles_findByResult.html.twig", array('vehicles'=>$vehicles));
+        return $this->render("WorkshopBundle:Admin:panelVehicles_showAll.html.twig", array('vehicles'=>$vehicles));
     }
 
     /**
@@ -168,7 +169,7 @@ class AdminController extends Controller
     public function panelVehicleFindByVinAction(Request $request) {
         $vin = $request->request->get('vin');
         $vehicles = $this->getDoctrine()->getRepository(Vehicle::class)->findVehicleByVin($vin);
-        return $this->render("WorkshopBundle:Admin:panelVehicles_findByResult.html.twig", array('vehicles'=>$vehicles));
+        return $this->render("WorkshopBundle:Admin:panelVehicles_showAll.html.twig", array('vehicles'=>$vehicles));
     }
 
 
@@ -191,7 +192,7 @@ class AdminController extends Controller
         $plateno = $request->request->get('plateno');
         $plateno = preg_replace('~\s~', '', $plateno);
         $vehicles = $this->getDoctrine()->getRepository(Vehicle::class)->findVehicleByPlateno($plateno);
-        return $this->render("WorkshopBundle:Admin:panelVehicles_findByResult.html.twig", array('vehicles'=>$vehicles));
+        return $this->render("WorkshopBundle:Admin:panelVehicles_showAll.html.twig", array('vehicles'=>$vehicles));
     }
 
     /**
@@ -202,4 +203,5 @@ class AdminController extends Controller
         return $this->redirectToRoute("person_index");
 
     }
+
 }

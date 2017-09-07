@@ -19,7 +19,7 @@ class Person
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity="Vehicle", mappedBy="person")
+     * @ORM\OneToMany(targetEntity="Vehicle", mappedBy="owner")
      */
     private $vehicles;
 

@@ -1,0 +1,12 @@
+{% extends "::panel.html.twig" %}
+
+{% block mainbox %}
+    <h2>Wyszukaj pojazdy po tablicy rejestracyjnej</h2>
+    <div>
+        <form method="POST" action="{{ path("adminPanel_vehicles_findByPlateno") }}">
+            Numer rejestracyjny:
+            <input type="text" maxlength="12" name="plateno"/>
+            <input type="submit" value="Szukaj"/>
+        </form>
+    </div>
+{% endblock %}

@@ -1,12 +1,17 @@
 {% extends '::panel.html.twig' %}
 
 {% block mainbox %}
+    {% for flash_message in app.session.flashBag.get('notice') %}
+        <div class="btn btn-success btn-lg">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
     <h1>Podgląd zlecenia</h1>
 
     <table class="table table-bordered">
         <tbody>
         <tr>
-            <th>Id zlecenia</th>
+            <th class="col-md-2">Id zlecenia</th>
             <td>{{ workOrder.id }}</td>
         </tr>
         <tr>
@@ -14,8 +19,8 @@
             <td>{% if workOrder.toDo %}
                 <table class="table table-responsive">
 
-                    {% for key, value in workOrder.toDo %}
-                        <tr></tr><th>{{ key }}</th><td>{{ value }}</td></tr>
+                    {% for order in workOrder.toDo %}
+                        <tr></tr><th>{{ order.category }}</th><td>{{ order.description }}</td></tr>
                     {% endfor %}
                 {% endif %}
             </table>

@@ -22,13 +22,13 @@
                         </select>
                     </td>
                     <td>
-                        <textarea name="1t"></textarea>
+                        <textarea name="1t" required></textarea>
                     </td>
                     <td>
-                        <input type="number" name="1d" min="0" step="1">
+                        <input type="number" name="1d" min="0" step="1" value="0" required>
                     </td>
                     <td>
-                        <input type="number" name="1p" min="0" step="0,01">
+                        <input type="number" name="1p" min="0" step="0,01" value="0" required>
                     </td>
                 </tr>
                 <tr>
@@ -43,10 +43,10 @@
                         <textarea name="2t"></textarea>
                     </td>
                     <td>
-                        <input type="number" name="2d" min="0" step="2">
+                        <input type="number" name="2d" min="0" step="2" value="0" required>
                     </td>
                     <td>
-                        <input type="number" name="2p" min="0" step="0,02">
+                        <input type="number" name="2p" min="0" step="0,02" value="0" required>
                     </td>
                 </tr>
                 <tr>
@@ -61,10 +61,10 @@
                         <textarea name="3t"></textarea>
                     </td>
                     <td>
-                        <input type="number" name="3d" min="0" step="3">
+                        <input type="number" name="3d" min="0" step="3" value="0" required>
                     </td>
                     <td>
-                        <input type="number" name="3p" min="0" step="0,03">
+                        <input type="number" name="3p" min="0" step="0,03" value="0" required>
                     </td>
                 </tr>
                 <tr>
@@ -79,10 +79,10 @@
                         <textarea name="4t"></textarea>
                     </td>
                     <td>
-                        <input type="number" name="4d" min="0" step="4">
+                        <input type="number" name="4d" min="0" step="4" value="0" required>
                     </td>
                     <td>
-                        <input type="number" name="4p" min="0" step="0,04">
+                        <input type="number" name="4p" min="0" step="0,04" value="0" required>
                     </td>
                 </tr>
                 <tr>
@@ -97,27 +97,75 @@
                         <textarea name="5t"></textarea>
                     </td>
                     <td>
-                        <input type="number" name="5d" min="0" step="5">
+                        <input type="number" name="5d" min="0" step="5" value="0" required>
                     </td>
                     <td>
-                        <input type="number" name="5p" min="0" step="0,05">
+                        <input type="number" name="5p" min="0" step="0,05" value="0" required>
                     </td>
                 </tr>
             </table>
         </div>
         <div>
-            <input type="checkbox" name="aircon">Klimatyzacja<br>
-            <input type="checkbox" name="inspection">Przegląd ogólny<br>
-        </div>
-        <div>
-        {{ form_widget(form) }}
+            <table class="table table-bordered">
+                <tr>
+                    <th>
+                        Dodatkowe opcje
+                    </th>
+                    <th>
+                        {{ form_label(form.startTime) }}
+                    </th>
+                    <th>
+                        {{ form_label(form.endTime) }}
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="aircon">Klimatyzacja<br>
+                        <input type="checkbox" name="inspection">Przegląd ogólny<br>
+                    </td>
+                    <td>
+                        {{ form_widget(form.startTime, {'value' : ' {{ now }} ' }) }}
+                    </td>
+                    <td>
+                        {{ form_widget(form.endTime) }}
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        {{ form_label(form.status) }}
+                    </th>
+                    <th>
+                        {{ form_label(form.duration) }}
 
-        <input type="submit" value="Dodaj zlecenie" />
-        {{ form_end(form) }}
+                    </th>
+                    <th>
+                        {{ form_label(form.value) }}
+
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        {{ form_widget(form.status) }}
+                    </td>
+                    <td>
+                        {{ form_widget(form.duration) }}
+
+                    </td>
+                    <td>
+                        {{ form_widget(form.value) }}
+                    </td>
+                </tr>
+            </table>
         </div>
-        <ul>
-            <li>
-                <a href="{{ path('workorder_index') }}">Back to the list</a>
-            </li>
-        </ul>
+        <div class="row">
+            <div class="col-md-4">
+                <input type="submit" value="Dodaj zlecenie" class="button btn-lg btn-info"/>
+                {{ form_end(form) }}
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+               <a href="{{ path('workorder_index') }}" class="btn btn-danger btn-lg pull-right">Anuluj</a>
+            </div>
+        </div>
 {% endblock %}

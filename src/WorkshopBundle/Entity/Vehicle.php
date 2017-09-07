@@ -19,9 +19,15 @@ class Vehicle {
     private $owner;
 
     /**
-     * @ORM\OneToMany(targetEntity="WorkOrder", mappedBy="vehicle")
+     * @ORM\OneToMany(targetEntity="WorkOrder", mappedBy="vehicleId")
      */
     private $order;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="GasTypes")
+     * @ORM\JoinColumn(name="gasType", referencedColumnName="id", nullable=false    )
+     */
+    private $fuel;
 
     /**
      * @var int
@@ -67,12 +73,7 @@ class Vehicle {
      */
     private $engineCapacity;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="fuel", type="string", length=255)
-     */
-    private $fuel;
+
 
     /**
      * @var string

@@ -1,21 +1,61 @@
 {% extends "::panel.html.twig" %}
 
 {% block mainbox %}
-    <div class="col-md-6">
+    <div class="row">
+        <h1>Dodaj klienta</h1>
         <div class="col-md-2"></div>
-        <div class="col-md-6">
-        <h1>Utwórz klienta</h1>
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-        {{ form_end(form) }}
-
-        <ul>
-            <li>
-                <a href="{{ path('person_index') }}">Back to the list</a>
-            </li>
-        </ul>
+        <div class="col-md-8">
+            {{ form_start(form) }}
+            <div class="form-group">
+                <label>Imię</label>
+                {{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
             </div>
-    </div>
+            <div class="form-group">
+                <label>Nazwisko</label>
+                {{ form_widget(form.surname, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+                <label>Ulica</label>
+                {{ form_widget(form.street, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+                <label>Nr lokalu</label>
+                {{ form_widget(form.localno, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+                <label>Kod pocztowy</label>
+                {{ form_widget(form.postcode, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+                <label>Miasto</label>
+                {{ form_widget(form.city, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+                <label>Numer telefonu</label>
+                {{ form_widget(form.phoneno, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+                <label>NIP</label>
+                {{ form_widget(form.nip, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+                <label>Użytkownik (jeśli ma konto)</label>
+                {{ form_widget(form.user, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="form-group">
+                <label>Czy to klient?</label>
+                {{ form_widget(form.customer, { 'attr': {'class': 'form-control'} }) }}
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="submit" value="Dodaj pojazd" class="btn btn-info btn-lg"/>
+                    {{ form_end(form) }}
+                </div>
+                <div class="col-md-4 pull-right">
+                    <a href="{{ path('person_index') }}" class="btn btn-danger btn-lg pull-right">Anuluj</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
     </div>
 {% endblock %}

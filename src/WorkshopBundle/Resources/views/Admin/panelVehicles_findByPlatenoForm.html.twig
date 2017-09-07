@@ -1,14 +1,16 @@
 {% extends "::panel.html.twig" %}
 
 {% block mainbox %}
-    <div class="col-md-6">
-        <h2>Wyszukaj pojazdy po tablicy rejestracyjnej</h2>
-        <div>
+        <h2>Wyszukaj pojazdy po tablic rejestracyjnej:</h2>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
             <form method="POST" action="{{ path("adminPanel_vehicles_findByPlateno") }}">
-                Numer rejestracyjny:
-                <input type="text" maxlength="12" name="plateno"/>
-                <input type="submit" value="Szukaj"/>
+                <label>Numer rejestracyjny:</label><br>
+                <input type="text" maxlength="12" name="plateno" required class="text-center"/><br>
+                <input type="submit" value="Szukaj" class="btn btn-success pull-right"/>
             </form>
         </div>
+        <div class="col-md-4"></div>
     </div>
 {% endblock %}

@@ -2,10 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0528a36-3aef-4477-af29-eab1269a5623" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder2.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_editOrder.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrderByPlateNo.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/panel.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/panel.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Controller/AdminController.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Controller/AdminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Controller/PersonController.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Controller/PersonController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Controller/VehicleController.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Controller/VehicleController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Controller/WorkOrderController.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Controller/WorkOrderController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Entity/Person.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Entity/Person.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Entity/Vehicle.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Entity/Vehicle.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrder.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Form/PersonType.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Form/PersonType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Form/VehicleType.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Form/VehicleType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Form/WorkOrderType.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Form/WorkOrderType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Repository/PersonRepository.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Repository/PersonRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomersShowAll.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomersShowAll.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_show.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder2.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder2.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_showOrder.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_showOrder.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_addVehicle.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_addVehicle.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_findByPlatenoForm.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_findByPlatenoForm.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_show.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_show.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_showAll.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_showAll.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,21 +42,41 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="panelOrders_newOrder.html.twig" pinned="false" current-in-tab="false">
+            <file leaf-file-name="panelOrders_newOrder.html.twig" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder.html.twig">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="732">
-                    <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+                  <state relative-caret-position="378">
+                    <caret line="24" column="52" lean-forward="false" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
                     <folding />
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="Vehicle.php" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/Vehicle.php">
+            <file leaf-file-name="WorkOrderItem.php" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrderItem.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="8478">
-                    <caret line="471" column="24" lean-forward="false" selection-start-line="471" selection-start-column="24" selection-end-line="471" selection-end-column="24" />
+                  <state relative-caret-position="2538">
+                    <caret line="141" column="34" lean-forward="false" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="34" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="panelVehicles_showAll.html.twig" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_showAll.html.twig">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="786">
+                    <caret line="53" column="155" lean-forward="false" selection-start-line="53" selection-start-column="155" selection-end-line="53" selection-end-column="155" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="panelVehicles_addVehicle.html.twig" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_addVehicle.html.twig">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="0">
+                    <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="11" />
                     <folding />
                   </state>
                 </provider>
@@ -46,51 +89,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1728">
-              <caret line="103" column="28" lean-forward="false" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/CustomerController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="panelOrders_showOrder.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_showOrder.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="panelCustomers.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,8 +102,28 @@
       <file leaf-file-name="PersonController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/PersonController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+            <state relative-caret-position="297">
+              <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Form/PersonType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="16" column="204" lean-forward="false" selection-start-line="16" selection-start-column="204" selection-end-line="16" selection-end-column="204" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="panelCustomers_addCustomer.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="653">
+              <caret line="46" column="83" lean-forward="false" selection-start-line="46" selection-start-column="83" selection-end-line="46" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -109,8 +132,8 @@
       <file leaf-file-name="WorkOrderController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/WorkOrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2682">
-              <caret line="149" column="69" lean-forward="false" selection-start-line="149" selection-start-column="69" selection-end-line="149" selection-end-column="69" />
+            <state relative-caret-position="851">
+              <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
               <folding>
                 <element signature="e#45#79#0#PHP" expanded="true" />
               </folding>
@@ -118,8 +141,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/User.php">
+      <file leaf-file-name="panelOrders_showOrder.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_showOrder.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -128,21 +161,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WorkOrderCategories.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrderCategories.php">
+      <file leaf-file-name="WorkOrder.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+            <state relative-caret-position="833">
+              <caret line="276" column="0" lean-forward="false" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VehicleController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/VehicleController.php">
+      <file leaf-file-name="Vehicle.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/Vehicle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+            <state relative-caret-position="378">
+              <caret line="27" column="84" lean-forward="false" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="panelCustomersShowAll.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomersShowAll.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="797">
+              <caret line="59" column="143" lean-forward="false" selection-start-line="59" selection-start-column="143" selection-end-line="59" selection-end-column="143" />
               <folding />
             </state>
           </provider>
@@ -160,6 +203,14 @@
       <find>&lt;em class=&quot;glyphicon glyphicon-align-left&quot;&gt;&lt;/em&gt;</find>
       <find>workorder_show</find>
       <find>4</find>
+      <find>td</find>
+      <find>th</find>
+      <find>edit_form</find>
+      <find>add</find>
+      <find>{ 'class': 'form-control'})</find>
+      <find>użytkownicy</find>
+      <find>użytkownic</find>
+      <find>orders</find>
     </findStrings>
     <replaceStrings>
       <replace>customer</replace>
@@ -167,6 +218,10 @@
       <replace>&lt;img src=&quot;{{ asset('img/icons/users.png') }}&quot;&gt;</replace>
       <replace>4</replace>
       <replace>5</replace>
+      <replace>th</replace>
+      <replace>td</replace>
+      <replace>form</replace>
+      <replace>{ 'attr': {'class': 'form-control'} })</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -179,57 +234,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Default/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/person/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/person/new.html.twig" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/person/person_findBySurname.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_findBySurnameForm.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_findBySurname.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Form/PersonType.php" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Entity/Person.php" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_addVehicle.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_findByOwner.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_findByOwnerForm.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_findByVinForm.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Repository/VehicleRepository.php" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelUsers.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Repository/PersonRepository.php" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelWorkes.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/workorder/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_findByPlatenoForm.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_showAll.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Form/WorkOrderType.php" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Entity/Vehicle.php" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Entity/OrderStatus.php" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrder.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrder_showAll.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_showAll.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomersShowAll.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Repository/WorkOrderRepository.php" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_showOrder.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panel.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_findByResult.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_show.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/person/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_show.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/panel.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Controller/PersonController.php" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Controller/VehicleController.php" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Controller/AdminController.php" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrderCategories.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrderItem.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/panel.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder2.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Controller/WorkOrderController.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_editOrder.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrderByPlateNo.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_findByPlatenoForm.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Controller/VehicleController.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Form/VehicleType.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_addVehicle.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_show.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_showAll.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_show.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Repository/PersonRepository.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Controller/AdminController.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Form/PersonType.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Controller/PersonController.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomersShowAll.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Entity/Person.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Entity/GasTypes.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Entity/Vehicle.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrder.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Form/WorkOrderType.php" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Controller/WorkOrderController.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_showOrder.html.twig" />
       </list>
     </option>
   </component>
@@ -479,6 +534,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e0528a36-3aef-4477-af29-eab1269a5623" name="Default" comment="" />
@@ -488,18 +546,18 @@
       <updated>1503823656295</updated>
       <workItem from="1503823661258" duration="123000" />
       <workItem from="1503823922294" duration="27502000" />
-      <workItem from="1504545519512" duration="33486000" />
+      <workItem from="1504545519512" duration="55682000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61111000" />
+    <option name="totallyTimeSpent" value="83307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18867925" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18867925" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -530,117 +588,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="67" lean-forward="false" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/WorkOrderControllerx.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/bootstrap-theme.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config_dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/person/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/person/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelWorkers">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Repository/PersonRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="79" lean-forward="false" selection-start-line="33" selection-start-column="79" selection-end-line="33" selection-end-column="79" />
-          <folding>
-            <marker date="1504567857536" expanded="true" signature="403:458" ph="SELECT p FRO... WorkshopBundle" />
-            <marker date="1504567857536" expanded="true" signature="403:459" ph="SELECT p FRO... WorkshopBundle" />
-            <marker date="1504567857536" expanded="true" signature="403:467" ph="SELECT p FRO... WorkshopBundle" />
-            <marker date="1504567857536" expanded="true" signature="669:714" ph="SELECT p FRO... WorkshopBundle" />
-            <marker date="1504567857536" expanded="true" signature="669:730" ph="SELECT p FRO... WorkshopBundle" />
-            <marker date="1504567857536" expanded="true" signature="882:944" ph="SELECT p FRO... WorkshopBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelWorkers.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/workorder/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -665,22 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_findByPlatenoForm.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/Person.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6133">
-          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="23" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/WorkOrderController2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -689,46 +620,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Form/WorkOrderType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/workorder/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Repository/VehicleRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-          <folding>
-            <marker date="1504558919566" expanded="true" signature="401:462" ph="SELECT p FRO... WorkshopBundle" />
-            <marker date="1504558919566" expanded="true" signature="664:724" ph="SELECT p FRO... WorkshopBundle" />
-            <marker date="1504558919566" expanded="true" signature="930:998" ph="SELECT p FRO... WorkshopBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="61" column="7" lean-forward="false" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -743,42 +638,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_showAll.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/workorder/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomersShowAll.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="815">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panel.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -791,42 +654,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_showAll.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="51" column="32" lean-forward="false" selection-start-line="51" selection-start-column="32" selection-end-line="53" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/person/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/panel.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -847,42 +678,221 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/VehicleController.php">
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/WorkshopBundle.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/AdminController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/workorder/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="103" column="28" lean-forward="false" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_showAll.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrderItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2538">
+          <caret line="141" column="34" lean-forward="false" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder2.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="887">
+          <caret line="122" column="14" lean-forward="false" selection-start-line="122" selection-start-column="14" selection-end-line="122" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_editOrder.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="99" column="13" lean-forward="false" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrderByPlateNo.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="71" lean-forward="false" selection-start-line="20" selection-start-column="71" selection-end-line="20" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_findByPlatenoForm.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="81" lean-forward="false" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="45" lean-forward="false" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/VehicleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="54" column="75" lean-forward="false" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Form/VehicleType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="15" column="188" lean-forward="false" selection-start-line="15" selection-start-column="188" selection-end-line="15" selection-end-column="188" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-535">
+          <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="50" column="21" lean-forward="true" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panel.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="45" lean-forward="false" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/panel.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="30" lean-forward="false" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers.html.twig">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="51" lean-forward="false" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="41" column="60" lean-forward="false" selection-start-line="41" selection-start-column="60" selection-end-line="41" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Repository/VehicleRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="40" lean-forward="false" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+          <folding>
+            <marker date="1504558919566" expanded="true" signature="401:462" ph="SELECT p FRO... WorkshopBundle" />
+            <marker date="1504558919566" expanded="true" signature="664:724" ph="SELECT p FRO... WorkshopBundle" />
+            <marker date="1504558919566" expanded="true" signature="930:998" ph="SELECT p FRO... WorkshopBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_showAll.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="53" column="155" lean-forward="false" selection-start-line="53" selection-start-column="155" selection-end-line="53" selection-end-column="155" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_addVehicle.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Repository/PersonRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="18" column="75" lean-forward="false" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
+          <folding>
+            <marker date="1504734417432" expanded="true" signature="403:457" ph="SELECT p FRO... WorkshopBundle" />
+            <marker date="1504734417432" expanded="true" signature="403:462" ph="SELECT p FRO... WorkshopBundle" />
+            <marker date="1504734417432" expanded="true" signature="403:470" ph="SELECT p FRO... WorkshopBundle" />
+            <marker date="1504734417432" expanded="true" signature="672:717" ph="SELECT p FRO... WorkshopBundle" />
+            <marker date="1504734417432" expanded="true" signature="672:733" ph="SELECT p FRO... WorkshopBundle" />
+            <marker date="1504734417432" expanded="true" signature="885:947" ph="SELECT p FRO... WorkshopBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Form/PersonType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="16" column="204" lean-forward="false" selection-start-line="16" selection-start-column="204" selection-end-line="16" selection-end-column="204" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/PersonController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_showOrder.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        <state relative-caret-position="297">
+          <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -895,22 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder2.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="887">
-          <caret line="143" column="14" lean-forward="true" selection-start-line="108" selection-start-column="8" selection-end-line="143" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="732">
-          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/OrderStatus.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1188">
@@ -919,36 +913,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/WorkshopBundle.php">
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/Person.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="61" lean-forward="false" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomersShowAll.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="797">
+          <caret line="59" column="143" lean-forward="false" selection-start-line="59" selection-start-column="143" selection-end-line="59" selection-end-column="143" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/GasTypes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="276" column="0" lean-forward="false" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Form/WorkOrderType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding>
+            <element signature="e#39#79#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/Vehicle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="27" column="84" lean-forward="false" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="24" column="52" lean-forward="false" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="46" column="83" lean-forward="false" selection-start-line="46" selection-start-column="83" selection-end-line="46" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/WorkOrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2682">
-          <caret line="149" column="69" lean-forward="false" selection-start-line="149" selection-start-column="69" selection-end-line="149" selection-end-column="69" />
+        <state relative-caret-position="851">
+          <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
           <folding>
             <element signature="e#45#79#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/User.php">
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_showOrder.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/Vehicle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8478">
-          <caret line="471" column="24" lean-forward="false" selection-start-line="471" selection-start-column="24" selection-end-line="471" selection-end-column="24" />
+        <state relative-caret-position="234">
+          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
           <folding />
         </state>
       </provider>

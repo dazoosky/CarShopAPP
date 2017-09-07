@@ -1,0 +1,113 @@
+{% extends '::panel.html.twig' %}
+
+{% block mainbox %}
+    <h1>Edycja zlecenia</h1>
+
+    {{ form_start(edit_form) }}
+        <div>
+            <table class="table">
+                <tr>
+                    <th>Kategoria</th>
+                    <th>Opis czynności</th>
+                    <th>Czas trwania</th>
+                    <th>Koszt</th>
+                </tr>
+                {% set counter = 1 %}
+                {% for item in workOrder.todo %}
+                    <tr>
+                        <td>
+                            <select name="{{ [counter, 'c']|join }}">
+                                {% for cat in categories %}
+                                    <option value="{{ cat.name }}" {% if cat.name == item.category %} selected {% endif %}>{{ cat.namePL }}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                        <td>
+                            <textarea name="{{ [counter, 't']|join }}">{{ item.description }}</textarea>
+                        </td>
+                        <td>
+                            <input type="number" name="{{ [counter, 'd']|join }}" min="0" step="1" value="{{ item.duration }}">
+                        </td>
+                        <td>
+                            <input type="number" name="{{ [counter, 'p']|join }}" min="0" step="0,01" value="{{ item.price }}">
+                        </td>
+                    </tr>
+                    {% set counter = counter + 1 %}
+                {% endfor %}
+            </table>
+        </div>
+        <table class="table table-bordered">
+            <tr>
+                <th>
+
+                </th>
+                <th>
+                    {{ form_label(edit_form.startTime) }}
+                </th>
+                <th>
+                    {{ form_label(edit_form.endTime) }}
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="aircon">Klimatyzacja<br>
+                    <input type="checkbox" name="inspection">Przegląd ogólny<br>
+                </td>
+                <td>
+                    {{ form_widget(edit_form.startTime) }}
+                </td>
+                <td>
+                    {{ form_widget(edit_form.endTime) }}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    {{ form_label(edit_form.status) }}
+                </th>
+                <th>
+                    {{ form_label(edit_form.duration) }}
+
+                </th>
+                <th>
+                    {{ form_label(edit_form.value) }}
+
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    {{ form_widget(edit_form.status) }}
+                </td>
+                <td>
+                    {{ form_widget(edit_form.duration) }}
+
+                </td>
+                <td>
+                    {{ form_widget(edit_form.value) }}
+                </td>
+            </tr>
+        </table>
+        <div hidden="true">
+            {{ form_label(edit_form.vehicleId) }}
+            {{ form_widget(edit_form.vehicleId) }}
+        </div>
+    <input type="submit" value="Zapisz" class="btn btn-info"/>
+    {{ form_end(edit_form) }}
+
+    <ul class="list-group">
+        <li>
+            <a href="{{ path('workorder_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+
+
+<!--
+$builder->add('value')->add('startTime')->add('endTime')->add('duration')->add('status')->add('vehicleId');
+}
+{% endblock %}
+

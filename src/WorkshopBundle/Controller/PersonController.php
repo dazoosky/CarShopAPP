@@ -27,8 +27,8 @@ class PersonController extends Controller
 
         $people = $em->getRepository('WorkshopBundle:Person')->findAll();
 
-        return $this->render('WorkshopBundle:Admin:panelUsers.html.twig', array(
-            'people' => $people,
+        return $this->render('WorkshopBundle:Admin:panelCustomersShowAll.html.twig', array(
+            'customers' => $people, 'who' => 'użytkowników', 'showIfCustomer' => true
         ));
     }
 

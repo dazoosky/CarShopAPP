@@ -1,21 +1,20 @@
 {% extends "::panel.html.twig" %}
 
 {% block mainbox %}
-        <h1>Lista klientów</h1>
+        <h1>Lista {{ who }}</h1>
 
-        <table class="table table-bordered">
+        <table class="table">
             <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Surname</th>
-                <th>Street</th>
-                <th>Localno</th>
-                <th>Postcode</th>
-                <th>City</th>
-                <th>Phoneno</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Kontakt</th>
                 <th>Nip</th>
-                <th>Customer</th>
+                <th>Konto</th>
+                {%  if showIfCustomer == true %}
+                    <th>Klient/pracownik</th>
+                {% endif %}
                 <th>Actions</th>
             </tr>
             </thead>
@@ -25,31 +24,38 @@
                     <td><a href="{{ path('person_show', { 'id': person.id }) }}">{{ person.id }}</a></td>
                     <td>{{ person.name }}</td>
                     <td>{{ person.surname }}</td>
-                    <td>{{ person.street }}</td>
-                    <td>{{ person.localno }}</td>
-                    <td>{{ person.postcode }}</td>
-                    <td>{{ person.city }}</td>
-                    <td>{{ person.phoneno }}</td>
-                    <td>{{ person.nip }}</td>
-                    <td>{{ person.customer }}</td>
                     <td>
-                        <ul>
-                            <li>
-                                <a href="{{ path('person_show', { 'id': person.id }) }}">show</a>
-                            </li>
-                            <li>
-                                <a href="{{ path('person_edit', { 'id': person.id }) }}">edit</a>
-                            </li>
-                        </ul>
+
+                        <span class="glyphicon glyphicon-earphone"> {{ person.phoneno }}</span><br>
+
+                            {% if not person.user == null %}
+                                <span class="glyphicon glyphicon-envelope"> {{ person.user.email }}</span>
+                            {% else %}
+                                <span class="glyphicon glyphicon-remove"> Brak adresu email</span>
+                            {% endif %}
+                    </td>
+                    <td>{{ person.nip }}</td>
+                    <td>
+                        {% if not person.user == null %}
+                            {{ person.user.username }}
+                        {% else %}
+                            Brak konta online
+                        {% endif %}
+                    </td>
+                    {%  if showIfCustomer == true %}
+                        {% if person.customer == true %}
+                            <td>Klient</td>
+                        {% else %}
+                            <td>Pracownik</td>
+                        {% endif %}
+                    {% endif %}
+                    <td>
+                        <a href="{{ path('person_show', { 'id': person.id }) }}" class="glyphicon glyphicon-info-sign"> POKAŻ </a>
+                        <a href="{{ path('person_edit', { 'id': person.id }) }}" class="glyphicon glyphicon glyphicon-edit"> EDYTUJ</a>
                     </td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
-
-        <ul>
-            <li>
-                <a href="{{ path('person_new') }}">Create a new person</a>
-            </li>
-        </ul>
+                <a href="{{ path('person_new') }}" class="btn btn-success btn-lg"><span class="glyphicon glyphicon glyphicon-plus"></span>Dodaj</a>
 {% endblock %}

@@ -4,7 +4,7 @@
     <div class="col-md-6">
         <h1>Lista pojazdów</h1>
 
-            <table class="table table-bordered">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -42,27 +42,15 @@
                         <td>{{ vehicle.plateNo }}</td>
                         <td>{{ vehicle.owner }}</td>
                         <td>
-                            <ul>
-                                <li>
-                                    <a href="{{ path('vehicle_show', { 'id': vehicle.id }) }}">show</a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('vehicle_edit', { 'id': vehicle.id }) }}">edit</a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('vehicle_new_order', { 'id': vehicle.id }) }}">Dodaj zlecenie</a>
-                                </li>
-                            </ul>
+                            <a href="{{ path('vehicle_show', { 'id': vehicle.id }) }}" class="glyphicon glyphicon-info-sign"> POKAŻ </a>
+                            <a href="{{ path('vehicle_edit', { 'id': vehicle.id }) }}" class="glyphicon glyphicon glyphicon-edit"> EDYTUJ</a>
+                            <a href="{{ path('vehicle_new_order', { 'id': vehicle.id }) }}" class="btn btn-info"><span class="glyphicon glyphicon glyphicon-plus"></span> Dodaj zlecenie</a>
                         </td>
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
 
-            <ul>
-                <li>
-                    <a href="{{ path('vehicle_new') }}">Create a new vehicle</a>
-                </li>
-            </ul>
+                    <a href="{{ path('vehicle_new') }}" class="btn btn-success btn-lg"><span class="glyphicon glyphicon glyphicon-plus"></span>Dodaj pojazd</a>
 
 {% endblock %}

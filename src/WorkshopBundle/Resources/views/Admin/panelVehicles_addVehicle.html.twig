@@ -1,21 +1,73 @@
 {% extends "::panel.html.twig" %}
 
 {% block mainbox %}
-    <div class="col-md-8">
+    <div class="row">
+        <h1>Dodaj pojazd</h1>
          <div class="col-md-2"></div>
-         <div class="col-md-4">
-            <h1>Dodaj pojazd</h1>
-
+         <div class="col-md-8">
             {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <input type="submit" value="Create" />
-            {{ form_end(form) }}
-
-            <ul>
-                <li>
-                    <a href="{{ path('vehicle_index') }}">Back to the list</a>
-                </li>
-            </ul>
+             <div class="form-group">
+                 <label>Typ pojazdu</label>
+                 {{ form_widget(form.type, { 'attr': {'class': 'form-control'} }) }}
+             </div>
+             <div class="form-group">
+                 <label>Marka</label>
+                 {{ form_widget(form.make, { 'attr': {'class': 'form-control'} }) }}
+             </div>
+             <div class="form-group">
+                 <label>Model</label>
+                 {{ form_widget(form.model, { 'attr': {'class': 'form-control'} }) }}
+             </div>
+             <div class="form-group">
+                 <label>Rok produkcji</label>
+                 {{ form_widget(form.year, { 'attr': {'class': 'form-control'} }) }}
+             </div>
+             <div class="form-group">
+                 <label>Pojemność silnika (w ccm)</label>
+                 {{ form_widget(form.engineCapacity, { 'attr': {'class': 'form-control'} }) }}
+             </div>
+             <div class="form-group">
+                 <label>Paliwo</label>
+                 {{ form_widget(form.fuel, { 'attr': {'class': 'form-control'} }) }}
+             </div>
+             <div class="form-group">
+                 <label>Kod silnika</label>
+                 {{ form_widget(form.engineCode, { 'attr': {'class': 'form-control'} }) }}
+             </div>
+             <div class="form-group">
+                 <label>Nadwozie</label>
+                 {{ form_widget(form.body, { 'attr': {'class': 'form-control'} }) }}
+             </div>
+             <div class="form-group">
+                 <label>Ubezpieczenie do</label>
+                 {{ form_widget(form.insuranceDate) }}
+             </div>
+             <div class="form-group">
+                 <label>Przegląd do</label>
+                 {{ form_widget(form.survayDate) }}
+             </div>
+             <div class="form-group">
+                 <label>Numer VIN</label>
+                 {{ form_widget(form.vin, { 'attr': {'class': 'form-control'} }) }}
+             </div>
+             <div class="form-group">
+                 <label>Tablica rejestracyjna</label>
+                 {{ form_widget(form.plateNo, { 'attr': {'class': 'form-control'} }) }}
+             </div>
+             <div class="form-group" hidden="true">
+                 <label>Właściciel</label>
+                 {{ form_widget(form.owner, { 'attr': {'class': 'form-control'} }) }}
+             </div>
+             <div class="row">
+                <div class="col-md-4">
+                     <input type="submit" value="Dodaj pojazd" class="btn btn-info btn-lg"/>
+                    {{ form_end(form) }}
+                </div>
+                 <div class="col-md-4 pull-right">
+                        <a href="{{ path('vehicle_index') }}" class="btn btn-danger btn-lg pull-right">Anuluj</a>
+                 </div>
+             </div>
          </div>
-    </div>
+        <div class="col-md-2"></div>
+     </div>
 {% endblock %}
