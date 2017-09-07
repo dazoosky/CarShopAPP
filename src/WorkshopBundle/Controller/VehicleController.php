@@ -92,7 +92,7 @@ class VehicleController extends Controller
             return $this->redirectToRoute('vehicle_edit', array('id' => $vehicle->getId()));
         }
 
-        return $this->render('vehicle/edit.html.twig', array(
+        return $this->render('WorkshopBundle:Admin:panelVehicles_editVehicle.html.twig', array(
             'vehicle' => $vehicle,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

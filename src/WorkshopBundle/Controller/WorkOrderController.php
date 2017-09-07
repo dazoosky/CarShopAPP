@@ -52,7 +52,7 @@ class WorkOrderController extends Controller
             $em->persist($workOrder);
             $em->flush();
 
-            return $this->redirectToRoute('workorder_show', array('id' => $workOrder->getId()));
+            return $this->redirectToRoute('WorkshopBundle:Admin:panelOrders_showOrder.html.twig', array('id' => $workOrder->getId()));
         }
 
         return $this->render('WorkshopBundle:Admin:panelOrders_newOrder.html.twig', array(
@@ -253,6 +253,19 @@ class WorkOrderController extends Controller
         ));
     }
 
+    /**
+     * @Route("/ordersFindByVehicle/{id}", name="adminPanel_ordersFindByVehicle")
+     * @Method("GET")
+     */
+    public function findOrdersByVehicleAction($id) {
+        $em = $this->getDoctrine()->getManager();
+        $vehicle = $em->getRepository('WorkshopBundle:Vehicle')->findById($id);
+        $workOrders = $em->getRepository('WorkshopBundle:WorkOrder')->findByVehicleId($vehicle);
+        return $this->render('WorkshopBundle:Admin:panelOrders_showAll.html.twig', array(
+            'workOrders' => $workOrders,
+        ));
+    }
+
     private function handleCustomFields(Request $request) {
         $array['Silnik']= $this->get('request')->request->get('engine');
         $array['Układ napędowy'] = $this->get('request')->request->get('drivetrain');
@@ -278,6 +291,22 @@ class WorkOrderController extends Controller
             $array['Przegląd ogólny'] = 'TAK';
         }
         return $array;
+    }
+
+    /**
+     * @Route("/workOrderStatusChange/{id}/{newStatusId}", name="panelAdmin_Orders_workOrderStatusChange")
+     * @Method({"GET"})
+     */
+    public function changeStatusAction($id, $newStatusId)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $workOrder = $em->getRepository('WorkshopBundle:WorkOrder')->findOneById($id);
+        $status = $em->getRepository('WorkshopBundle:OrderStatus')->findOneById($newStatusId);
+        $workOrder->setStatus($status);
+        $em->persist($workOrder);
+        $em->flush();
+        return $this->redirectToRoute('workorder_show', array('id' => $workOrder->getId()));
+
     }
 
 

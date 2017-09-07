@@ -76,6 +76,9 @@
                     <a href="{{ path('vehicle_new_order', { 'id': vehicle.id }) }}">Dodaj zlecenie</a>
                 </li>
                 <li>
+                    <a href="{{ path('adminPanel_ordersFindByVehicle', { 'id': vehicle.id }) }}">Pokaż wszystkie zlecenia</a>
+                </li>
+                <li>
                     {{ form_start(delete_form) }}
                     <input type="submit" value="Delete">
                     {{ form_end(delete_form) }}

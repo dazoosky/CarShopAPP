@@ -1,21 +1,52 @@
 {% extends '::panel.html.twig' %}
 
 {% block mainbox %}
+    <div class="row">
     {% for flash_message in app.session.flashBag.get('notice') %}
         <div class="btn btn-success btn-lg">
             {{ flash_message }}
         </div>
     {% endfor %}
-    <h1>Podgląd zlecenia</h1>
+    </div>
+    <div class="row">
+    <h1>Podgląd zlecenia nr: {{ workOrder.Id }}</h1>
 
     <table class="table table-bordered">
         <tbody>
         <tr>
-            <th class="col-md-2">Id zlecenia</th>
-            <td>{{ workOrder.id }}</td>
+            <th>Pojazd</th>
+            <td> {{ workOrder.vehicleId.make }} {{ workOrder.vehicleId.model }}</td>
         </tr>
         <tr>
-            <th>Lista prac</th>
+            <th>Właściciel</th>
+            <td> <a href="{{ path('person_show', {'id': workOrder.vehicleId.owner.id }) }}">{{ workOrder.vehicleId.owner }}</a><span class="glyphicon glyphicon-earphone pull-right">  {{ workOrder.vehicleId.owner.phoneno }}</span></td>
+        </tr>
+        <tr>
+            <th>Tablica rejestracyjna</th>
+            <td> {{ workOrder.vehicleId.plateno }}</td>
+        </tr>
+        <tr>
+            <th>Numer VIN</th>
+            <td> {{ workOrder.vehicleId.vin }}</td>
+        </tr>
+        <tr>
+            <th>Rok produkcji</th>
+            <td> {{ workOrder.vehicleId.year }}</td>
+        </tr>
+        <tr>
+            <th>Paliwo</th>
+            <td> {{ workOrder.vehicleId.fuel }}</td>
+        </tr>
+        <tr>
+            <th>Kod silnika</th>
+            <td> {{ workOrder.vehicleId.enginecode }}</td>
+        </tr>
+        <tr>
+            <th>Pojemność</th>
+            <td> {{ workOrder.vehicleId.engineCapacity }}</td>
+        </tr>
+        <tr>
+            <th class="col-md-2">Lista prac</th>
             <td>{% if workOrder.toDo %}
                 <table class="table table-responsive">
 
@@ -49,22 +80,19 @@
         </tr>
         <tr>
             <th>Status</th>
-            <td>{{ workOrder.status }}</td>
+                <td>{{ workOrder.status }}
+                    <a href="{{ path('panelAdmin_Orders_workOrderStatusChange', {'id': workOrder.id, 'newStatusId': '4' }) }}" class="btn btn-danger  pull-right">Anuluj</a>
+                    <a href="{{ path('panelAdmin_Orders_workOrderStatusChange', {'id': workOrder.id, 'newStatusId': '3' }) }}" class="btn btn-success pull-right">Zakończ</a>
+                    <a href="{{ path('panelAdmin_Orders_workOrderStatusChange', {'id': workOrder.id, 'newStatusId': '2' }) }}" class="btn btn-warning pull-right">Rozpocznij</a>
+                </td>
         </tr>
         </tbody>
     </table>
+    </div>
+    <div class="row">
+        <a href="{{ path('workorder_edit', { 'id': workOrder.id }) }}" class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-edit"> Edytuj</span></a>
+        <a href="{{ path('workorder_edit', { 'id': workOrder.id }) }}" class="btn btn-info btn-lg pull-right"><span class="glyphicon glyphicon-camera"> Dodaj dokumentacje zdjęciową</span></a>
+    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('workorder_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('workorder_edit', { 'id': workOrder.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
 {% endblock %}

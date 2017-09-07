@@ -152,6 +152,17 @@ class AdminController extends Controller
     }
 
     /**
+     * @Route("/vehicles/findVehicleByOwnerId/{id}", name="adminPanel_vehicles_findByOwnerId")
+     * @Security("has_role('ROLE_ADMIN')")
+     * @Method("GET")
+     */
+    public function panelVehicleFindByOwnerIdAction(Request $request, $id) {
+        $owner = $this->getDoctrine()->getRepository(Person::class)->findOneById($id);
+        $vehicles = $this->getDoctrine()->getRepository(Vehicle::class)->findVehicleByOwner($owner);
+        return $this->render("WorkshopBundle:Admin:panelVehicles_showAll.html.twig", array('vehicles'=>$vehicles));
+    }
+
+    /**
      * @Route("/vehicles/findByVin", name="adminPanel_vehicles_findByVinForm")
      * @Security("has_role('ROLE_ADMIN')")
      * @Method("GET")
