@@ -1,0 +1,14 @@
+{% extends '::panel.html.twig' %}
+
+{% block mainbox %}
+    <h2>Mailing center</h2>
+    <ul>
+        <li>
+            <a href="#">Wysłane wiadomości</a>
+        </li>
+        <li>
+            <a href="{{ path('mail_new') }}">Wyślij wiadomość</a>
+        </li>
+    </ul>
+
+{% endblock %}

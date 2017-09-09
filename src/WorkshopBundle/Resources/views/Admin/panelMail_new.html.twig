@@ -1,0 +1,34 @@
+{% extends '::panel.html.twig' %}
+
+{% block mainbox %}
+    <div class="col-md-8 col-md-offset-2">
+        <h2>Stwórz email</h2>
+        {{ form_start(form) }}
+        <div class="form-group">
+            <label>Nadawca</label>
+            {#<input type="text" value="xxx" name="sender" class="form-control" disabled>#}
+            {{ form_widget(form.sender, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label>Odbiorca</label>
+            {#<input type="email" name="reciever" class="form-control">#}
+            {{ form_widget(form.reciever, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label>Treść</label>
+            {#<textarea class="form-control" name="text"></textarea>#}
+            {{ form_widget(form.text, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Wyślij">
+        </div>
+        {{ form_end(form) }}
+
+        <ul>
+            <li>
+                <a href="{{ path('mail_index') }}">Back to the list</a>
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}

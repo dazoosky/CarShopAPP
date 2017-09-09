@@ -25,6 +25,7 @@ security:
         - { path: ^/login, allow_if: "not has_role('ROLE_USER')" }
         - { path: ^/register, allow_if: "not has_role('ROLE_USER')" }
         - { path: ^/resetting, allow_if: "not has_role('ROLE_USER')" }
+        - { path: ^/mail, allow_if: "has_role('ROLE_USER')" }
         - { path: ^/admin, role: ROLE_ADMIN }
         - { path: ^/customer, role: ROLE_CUSTOMER }
 

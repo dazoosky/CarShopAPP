@@ -66,8 +66,11 @@ class PhotoController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($photo);
             $em->flush();
-
-            return $this->redirectToRoute('photo_show', array('id' => $photo->getId()));
+            $this->addFlash(
+                'notice',
+                'Zdjęcie dodane!'
+            );
+            return $this->redirectToRoute('workorder_show', array('id' => $workOrder->getId()));
         }
 
         return $this->render('WorkshopBundle:Admin:addPhotoForm.html.twig', array(

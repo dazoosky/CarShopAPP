@@ -5,33 +5,33 @@
 {% block body %}
 
         <div class="container">
-            <div class="col-md-2 well">
+            <div class="col-md-3 well text-center">
                 <br>
                 <div class="btn-group btn-group-vertical btn-group-lg">
-                    <button type="button" class="btn btn-info"">
+                    <button type="button" class="btn btn-info h80">
                         Czas:<p id="clock"></p>
                     </button>
                     <a href="{{ path("adminPanel_customers") }}" class="btn btn-default h55" type="button">
-                        <img src="{{ asset('img/icons/customers.png') }}"> Klienci
+                        <p class="pull-left"><img src="{{ asset('img/icons/customers.png') }}"> Klienci</p>
                     </a>
                     <a href="{{ path("adminPanel_vehicles") }}" class="btn btn-default h55" type="button">
-                        <img src="{{ asset('img/icons/vehicles.png') }}"> Pojazdy
+                        <p class="pull-left"><img src="{{ asset('img/icons/vehicles.png') }}"> Pojazdy</p>
                     </a>
                     <a href="{{ path('adminPanel_orders') }}" class="btn btn-default h55" type="button">
-                        <img src="{{ asset('img/icons/orders.png') }}"> Zlecenia
+                        <p class="pull-left"><img src="{{ asset('img/icons/orders.png') }}"> Zlecenia</p>
                     </a>
                     <a href="{{ path('adminPanel_workers') }}" class="btn btn-default h55" type="button">
-                        <img src="{{ asset('img/icons/workers.png') }}"> Pracownicy
+                        <p class="pull-left"><img src="{{ asset('img/icons/workers.png') }}"> Pracownicy</p>
                     </a>
                     <a href="{{ path('adminPanel_users_all') }}" class="btn btn-default h55" type="button">
-                        <img src="{{ asset('img/icons/users.png') }}"> Użytkownicy
+                        <p class="pull-left"><img src="{{ asset('img/icons/users.png') }}"> Użytkownicy</p>
                     </a>
                     <button class="btn btn-default" type="button">
-                        <img src="{{ asset('img/icons/reports.png') }}"> Reports
+                        <p class="pull-left"><img src="{{ asset('img/icons/reports.png') }}"> Reports</p>
                     </button>
                 </div>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-9">
                 {% block mainbox %}
                 {% endblock %}
             </div>
