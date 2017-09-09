@@ -14,7 +14,7 @@ class PersonType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('surname')->add('street')->add('localno')->add('postcode')->add('city')->add('phoneno')->add('nip')->add('user')->add('customer', CheckboxType::class, array('value' => 1));
+        $builder->add('name')->add('surname')->add('street')->add('localno')->add('postcode')->add('city')->add('phoneno')->add('nip')->add('user')->add('customer', CheckboxType::class, array('value' => true));
         // ,ChoiceType::class, array('choices'  => array('Tak' => true, 'Nie' => false),)
     }
     

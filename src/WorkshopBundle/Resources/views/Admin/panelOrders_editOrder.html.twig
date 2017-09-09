@@ -91,19 +91,11 @@
             {{ form_label(edit_form.vehicleId) }}
             {{ form_widget(edit_form.vehicleId) }}
         </div>
-    <input type="submit" value="Zapisz" class="btn btn-info"/>
+    <div class="row">
+        <input type="submit" value="Zapisz" class="btn btn-success btn-lg glyphicon glyphicon glyphicon-floppy-saved"/>
     {{ form_end(edit_form) }}
-
-    <ul class="list-group">
-        <li>
-            <a href="{{ path('workorder_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        <a href="{{ path('workorder_show', { 'id': workOrder.id }) }}" class="btn btn-lg btn-danger pull-right"><span class="glyphicon 	glyphicon glyphicon-remove">Anuluj</span></a>
+    </div>
 
 
 <!--

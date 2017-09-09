@@ -93,7 +93,7 @@ class PersonController extends Controller
             return $this->redirectToRoute('person_edit', array('id' => $person->getId()));
         }
 
-        return $this->render('person/edit.html.twig', array(
+        return $this->render('WorkshopBundle:Admin:panelCustomers_edit.html.twig', array(
             'person' => $person,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

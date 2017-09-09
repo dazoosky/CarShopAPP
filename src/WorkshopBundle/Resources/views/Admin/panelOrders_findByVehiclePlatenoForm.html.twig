@@ -1,0 +1,16 @@
+{% extends "::panel.html.twig" %}
+
+{% block mainbox %}
+    <h2>Wyszukaj pojazdy po właścicielu</h2>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form method="POST" action="{{ path("adminPanel_vehicles_findByOwner") }}">
+                <label>Tablica rejestracyjna:</label><br>
+                <input type="text" maxlength="10" name="plateno" required class="text-center"/><br>
+                <input type="submit" value="Szukaj" class="btn btn-success pull-right"/>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+{% endblock %}

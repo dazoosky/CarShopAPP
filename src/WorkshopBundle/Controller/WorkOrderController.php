@@ -92,7 +92,7 @@ class WorkOrderController extends Controller
         $editForm->handleRequest($request);
         $categories = $this->getDoctrine()->getRepository('WorkshopBundle:WorkOrderCategories')->findAll();
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $todo = $this->handleToDoItems($request);
+            $todo = $this->handleToDoItems($request, $workOrder);
             $durAndPrice = $this->calculateTimeAndPrice($todo);
             $workOrder->setToDo(serialize($todo));
             $workOrder->setDuration($durAndPrice['duration']);
@@ -265,6 +265,31 @@ class WorkOrderController extends Controller
             'workOrders' => $workOrders,
         ));
     }
+
+
+    /**
+     * @Route("/ordersFindByVehiclePlateno", name="adminPanel_ordersFindByVehiclePlateNoForm")
+     * @Method("GET")
+     */
+    public function findOrdersByVehiclePlatenoFormAction() {
+        return $this->render('WorkshopBundle:Admin:panelOrders_showAll.html.twig', array());
+die;
+        return $this->render('WorkshopBundle:Admin:panelOrders_panelOrders_findByVehiclePlatenoForm.html.twig.html.twig', array());
+    }
+
+    /**
+     * @Route("/ordersFindByVehiclePlateno/{plateno}", name="adminPanel_ordersFindByVehiclePlateNo")
+     * @Method("GET")
+     */
+    public function findOrdersByVehiclePlatenoAction($plateno) {
+        $em = $this->getDoctrine()->getManager();
+        $vehicle = $em->getRepository('WorkshopBundle:Vehicle')->findByPlateNo($plateno);
+        $workOrders = $em->getRepository('WorkshopBundle:WorkOrder')->findByVehicleId($vehicle);
+        return $this->render('WorkshopBundle:Admin:panelOrders_showAll.html.twig', array(
+            'workOrders' => $workOrders,
+        ));
+    }
+
 
     private function handleCustomFields(Request $request) {
         $array['Silnik']= $this->get('request')->request->get('engine');

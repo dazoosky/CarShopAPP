@@ -1,0 +1,61 @@
+{% extends '::panel.html.twig' %}
+
+{% block mainbox %}
+    <h1>Edycja</h1>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+    {{ form_start(edit_form) }}
+    <div class="form-group">
+        <label>Imie:</label>
+        {{ form_widget(edit_form.name, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        <label>Nazwisko:</label>
+        {{ form_widget(edit_form.surname, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        <label>Ulica:</label>
+        {{ form_widget(edit_form.street, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        <label>Lokal:</label>
+        {{ form_widget(edit_form.localno, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        <label>Kod pocztowy:</label>
+        {{ form_widget(edit_form.postcode, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        <label>Miasto:</label>
+        {{ form_widget(edit_form.city, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        <label>Numer telefonu:</label>
+        {{ form_widget(edit_form.phoneno, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        <label>NIP:</label>
+        {{ form_widget(edit_form.nip, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        <label>Użytkownik (jeśli ma konto):</label>
+        {{ form_widget(edit_form.user, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+    <div class="form-group">
+        <label>Czy klient:</label>
+        {{ form_widget(edit_form.customer, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+        <div class="row">
+    <input type="submit" value="Zapisz zmiany" class="btn btn-success btn-lg"/>
+    {{ form_end(edit_form) }}
+            <a href="{{ path('person_show', { 'id': person.id }) }}" class="btn btn-lg btn-warning pull-right">Odrzuć</a>
+        </div>
+    </div>
+    <div class="col-md-3">
+    {{ form_start(delete_form) }}
+        <input type="submit" value="Usuń klienta" class="btn btn-danger btn-lg pull-right">
+    {{ form_end(delete_form) }}
+    </div>
+    </div>
+{% endblock %}

@@ -10,39 +10,39 @@
             <td>{{ person.id }}</td>
         </tr>
         <tr>
-            <th>Name</th>
+            <th>Imie</th>
             <td>{{ person.name }}</td>
         </tr>
         <tr>
-            <th>Surname</th>
+            <th>Nazwisko</th>
             <td>{{ person.surname }}</td>
         </tr>
         <tr>
-            <th>Street</th>
+            <th>Ulica</th>
             <td>{{ person.street }}</td>
         </tr>
         <tr>
-            <th>Localno</th>
+            <th>Lokal</th>
             <td>{{ person.localno }}</td>
         </tr>
         <tr>
-            <th>Postcode</th>
+            <th>Kod pocztowy</th>
             <td>{{ person.postcode }}</td>
         </tr>
         <tr>
-            <th>City</th>
+            <th>Miasto</th>
             <td>{{ person.city }}</td>
         </tr>
         <tr>
-            <th>Phoneno</th>
+            <th>Numer telefonu</th>
             <td>{{ person.phoneno }}</td>
         </tr>
         <tr>
-            <th>Nip</th>
+            <th>Numer NIP</th>
             <td>{{ person.nip }}</td>
         </tr>
         <tr>
-            <th>Customer</th>
+            <th>Czy klient?</th>
             <td>
                 {% if person.customer == false %}
                     Pracownik
@@ -54,20 +54,12 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('adminPanel_customers_all') }}">Powrót</a>
-        </li>
-        <li>
-            <a href="{{ path('person_edit', { 'id': person.id }) }}">Edit</a>
-        </li>
-        <li>
-            <a href="{{ path('adminPanel_vehicles_findByOwnerId', { 'id': person.id}) }}">Pokaż pojazdy</a>
-        </li>
-        <li>
+    <div class="row>">
+        <a href="{{ path('person_edit', { 'id': person.id }) }}" class="btn btn-info btn-lg pull-right">Edytuj</a>
+        <a href="{{ path('adminPanel_vehicles_findByOwnerId', { 'id': person.id}) }}" class="btn btn-success btn-lg pull-right">Pokaż pojazdy</a>
             {{ form_start(delete_form) }}
-            <input type="submit" value="Delete">
+            <input type="submit" value="Delete" class="btn btn-danger btn-lg">
             {{ form_end(delete_form) }}
-        </li>
     </ul>
+    </div>
 {% endblock %}

@@ -89,9 +89,9 @@ class Person
     private $nip;
 
     /**
-     * @var int
+     * @var boolean
      *
-     * @ORM\Column(name="customer", type="integer", nullable=false, options={"default":1})
+     * @ORM\Column(name="customer", type="boolean", nullable=false, options={"default":true})
      */
     private $customer;
 

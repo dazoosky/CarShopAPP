@@ -8,10 +8,10 @@
         <tr>
             <th class="col-md-1">Id</th>
             <th class="col-md-3">Pojazd</th>
-            <th class="col-md-2">Starttime</th>
-            <th class="col-md-2">Endtime</th>
+            <th class="col-md-2">Czas rozpoczęcia</th>
+            <th class="col-md-2">Czas zakończenia</th>
             <th class="col-md-2">Status</th>
-            <th class="col-md-1">Actions</th>
+            <th class="col-md-2">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -23,14 +23,8 @@
                 <td>{% if workOrder.endTime %}{{ workOrder.endTime|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ workOrder.status }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('workorder_show', { 'id': workOrder.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('workorder_edit', { 'id': workOrder.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('workorder_show', { 'id': workOrder.id }) }}" class="glyphicon glyphicon-info-sign"> POKAŻ </a>
+                    <a href="{{ path('workorder_edit', { 'id': workOrder.id }) }}" class="glyphicon glyphicon glyphicon-edit"> EDYTUJ</a>
                 </td>
             </tr>
         {% endfor %}

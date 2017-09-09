@@ -8,15 +8,19 @@
     {% if csrf_token %}
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
     {% endif %}
-
-    <label for="username">Login</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
-
-    <label for="password">Hasło</label>
-    <input type="password" id="password" name="_password" required="required" />
-
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">Pamiętaj mnie</label>
-
-    <input type="submit" id="_submit" name="_submit" value="Zaloguj!" />
+    <div class="form-group">
+        <label for="username">Login</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="password">Hasło</label>
+        <input type="password" id="password" name="_password" required="required" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        <label for="remember_me">Pamiętaj mnie</label>
+    </div>
+    <div class="form-group">
+        <input type="submit" id="_submit" name="_submit" value="Zaloguj!" class="btn btn-success btn-lg pull-right" />
+    </div>
 </form>

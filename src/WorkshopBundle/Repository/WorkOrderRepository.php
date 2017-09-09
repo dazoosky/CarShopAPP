@@ -20,5 +20,12 @@ class WorkOrderRepository extends EntityRepository
             ->getResult();
     }
 
+    public function findOrderByVehicle($vehicle)
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM WorkshopBundle:workorder p WHERE p.vehicleId = :vehicle')->setParameter('vehicle', $vehicle)
+            ->getResult();
+    }
 
 }
