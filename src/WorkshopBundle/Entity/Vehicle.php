@@ -30,6 +30,18 @@ class Vehicle {
     private $fuel;
 
     /**
+     * @ORM\ManyToOne(targetEntity="BodyTypes")
+     * @ORM\JoinColumn(name="bodyType", referencedColumnName="id")
+     */
+    private $body;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="VehicleType")
+     * @ORM\JoinColumn(name="vehicleType", referencedColumnName="id")
+     */
+    private $type;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -38,12 +50,6 @@ class Vehicle {
      */
     private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="type", type="string", length=50)
-     */
-    private $type;
 
     /**
      * @var string
@@ -82,12 +88,7 @@ class Vehicle {
      */
     private $engineCode;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="body", type="string", length=15, nullable=true)
-     */
-    private $body;
+
 
     /**
      * @var \DateTime

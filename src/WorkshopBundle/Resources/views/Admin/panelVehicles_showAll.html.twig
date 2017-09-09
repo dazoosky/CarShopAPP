@@ -25,7 +25,7 @@
                         <td>{{ vehicle.model }}</td>
                         <td>{{ vehicle.vIN }}</td>
                         <td>{{ vehicle.plateNo }}</td>
-                        <td>{{ vehicle.owner }}</td>
+                        <td><a href="{{ path('person_show', {'id': vehicle.owner.id }) }}'">{{ vehicle.owner }}</a></td>
                         <td>
                             <a href="{{ path('vehicle_show', { 'id': vehicle.id }) }}" class="glyphicon glyphicon-info-sign"> POKAŻ </a>
                             <a href="{{ path('vehicle_edit', { 'id': vehicle.id }) }}" class="glyphicon glyphicon glyphicon-edit"> EDYTUJ</a>
