@@ -7,15 +7,15 @@
             <table class="table table-bordered">
                 <tbody>
                 <tr>
-                    <th class="col-md-2">Id</th>
+                    <th class="col-md-2">Numer id</th>
                     <td>{{ vehicle.id }}</td>
                 </tr>
                 <tr>
-                    <th>Type</th>
+                    <th>Typ</th>
                     <td>{{ vehicle.type }}</td>
                 </tr>
                 <tr>
-                    <th>Make</th>
+                    <th>Marka</th>
                     <td>{{ vehicle.make }}</td>
                 </tr>
                 <tr>
@@ -23,66 +23,60 @@
                     <td>{{ vehicle.model }}</td>
                 </tr>
                 <tr>
-                    <th>Year</th>
+                    <th>Rok produkcji</th>
                     <td>{{ vehicle.year }}</td>
                 </tr>
                 <tr>
-                    <th>Enginecapacity</th>
+                    <th>Pojemność silnika</th>
                     <td>{{ vehicle.engineCapacity }}</td>
                 </tr>
                 <tr>
-                    <th>Fuel</th>
+                    <th>Rodzaj paliwa</th>
                     <td>{{ vehicle.fuel }}</td>
                 </tr>
                 <tr>
-                    <th>Enginecode</th>
+                    <th>Kod silnika</th>
                     <td>{{ vehicle.engineCode }}</td>
                 </tr>
                 <tr>
-                    <th>Body</th>
+                    <th>Nadwozie</th>
                     <td>{{ vehicle.body }}</td>
                 </tr>
                 <tr>
-                    <th>Insurancedate</th>
+                    <th>Ubezpieczenie do</th>
                     <td>{% if vehicle.insuranceDate %}{{ vehicle.insuranceDate|date('Y-m-d') }}{% endif %}</td>
                 </tr>
                 <tr>
-                    <th>Survaydate</th>
+                    <th>Przegląd do</th>
                     <td>{% if vehicle.survayDate %}{{ vehicle.survayDate|date('Y-m-d') }}{% endif %}</td>
                 </tr>
                 <tr>
-                    <th>Vin</th>
+                    <th>Numer VIN</th>
                     <td>{{ vehicle.vIN }}</td>
                 </tr>
                 <tr>
-                    <th>Plateno</th>
+                    <th>Numer rejestracyjny</th>
                     <td>{{ vehicle.plateNo }}</td>
                 </tr>
                 <tr>
-                    <th>Owner</th>
+                    <th>Właściciel</th>
                     <td><a href="{{ path('person_show', {'id': vehicle.owner.id}) }}">{{ vehicle.owner.name }} {{ vehicle.owner.surname }}</a></td>
                 </tr>
                 </tbody>
             </table>
-
-            <ul>
-                <li>
-                    <a href="{{ path('vehicle_index') }}">Back to the list</a>
-                </li>
-                <li>
-                    <a href="{{ path('vehicle_edit', { 'id': vehicle.id }) }}">Edit</a>
-                </li>
-                <li>
-                    <a href="{{ path('vehicle_new_order', { 'id': vehicle.id }) }}">Dodaj zlecenie</a>
-                </li>
-                <li>
-                    <a href="{{ path('adminPanel_ordersFindByVehicle', { 'id': vehicle.id }) }}">Pokaż wszystkie zlecenia</a>
-                </li>
-                <li>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="{{ path('vehicle_edit', { 'id': vehicle.id }) }}" class="btn btn-warning btn-lg">Edytuj</a>
                     {{ form_start(delete_form) }}
-                    <input type="submit" value="Delete">
+                    <input type="submit" value="Usuń" class="btn btn-danger btn-lg">
                     {{ form_end(delete_form) }}
+                </div>
+                <div class="col-md-6 pull-right">
+                    <div class="row"><a href="{{ path('vehicle_new_order', { 'id': vehicle.id }) }}" class="btn btn-success btn-lg pull-right">Dodaj zlecenie</a></div>
+                    <div class="row"><a href="{{ path('adminPanel_ordersFindByVehicle', { 'id': vehicle.id }) }}" class="btn btn-info btn-lg pull-right">Pokaż wszystkie zlecenia</a></div>
+                </div>
                 </li>
             </ul>
 
+            </div>
 {% endblock %}

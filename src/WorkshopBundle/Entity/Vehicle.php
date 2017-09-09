@@ -366,6 +366,8 @@ class Vehicle {
      */
     public function setvin($vin)
     {
+        $vin = preg_replace('~ ~','', $vin);
+        $vin = strtoupper($vin);
         $this->vin = $vin;
 
         return $this;
@@ -389,8 +391,9 @@ class Vehicle {
      */
     public function setPlateNo($plateNo)
     {
+        $plateNo = preg_replace('~ ~','', $plateNo);
+        $plateNo = strtoupper($plateNo);
         $this->plateNo = $plateNo;
-
         return $this;
     }
 
