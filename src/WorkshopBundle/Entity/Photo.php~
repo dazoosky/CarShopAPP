@@ -13,6 +13,18 @@ use Doctrine\ORM\Mapping as ORM;
 class Photo
 {
     /**
+     * @ORM\OneToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $author;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="WorkOrder", inversedBy="photos")
+     * @ORM\JoinColumn(name="workorder_id", referencedColumnName="id")
+     */
+    private $workorder;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")

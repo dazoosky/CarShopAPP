@@ -57,6 +57,7 @@
     <div class="row>">
         <a href="{{ path('person_edit', { 'id': person.id }) }}" class="btn btn-info btn-lg pull-right">Edytuj</a>
         <a href="{{ path('adminPanel_vehicles_findByOwnerId', { 'id': person.id}) }}" class="btn btn-success btn-lg pull-right">Pokaż pojazdy</a>
+        <a href="{{ path('vehicle_new_byOwner', {'ownerId': person.id }) }}" class="btn btn-success btn-lg"><span class="glyphicon glyphicon glyphicon-plus"></span>Dodaj pojazd</a>
             {{ form_start(delete_form) }}
             <input type="submit" value="Delete" class="btn btn-danger btn-lg">
             {{ form_end(delete_form) }}

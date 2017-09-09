@@ -3,6 +3,7 @@
 namespace WorkshopBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Photo
@@ -13,13 +14,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Photo
 {
     /**
-     * @ORM\OneToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $author;
 
     /**
-     * @ORM\OneToOne(targetEntity="WorkOrder")
+     * @ORM\ManyToOne(targetEntity="WorkOrder", inversedBy="photos")
      * @ORM\JoinColumn(name="workorder_id", referencedColumnName="id")
      */
     private $workorder;
@@ -36,6 +37,8 @@ class Photo
     /**
      * @var string
      *
+     * @Assert\NotBlank(message="Please, upload the product brochure as a PDF file.")
+     * @Assert\File(mimeTypes={ "image/jpeg" })
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
@@ -72,5 +75,51 @@ class Photo
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set author
+     *
+     * @param \WorkshopBundle\Entity\User $author
+     * @return Photo
+     */
+    public function setAuthor(\WorkshopBundle\Entity\User $author = null)
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \WorkshopBundle\Entity\User 
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * Set workorder
+     *
+     * @param \WorkshopBundle\Entity\WorkOrder $workorder
+     * @return Photo
+     */
+    public function setWorkorder(\WorkshopBundle\Entity\WorkOrder $workorder = null)
+    {
+        $this->workorder = $workorder;
+
+        return $this;
+    }
+
+    /**
+     * Get workorder
+     *
+     * @return \WorkshopBundle\Entity\WorkOrder 
+     */
+    public function getWorkorder()
+    {
+        return $this->workorder;
     }
 }

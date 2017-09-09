@@ -12,6 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class WorkOrder
 {
+    /**
+     * @ORM\OneToMany(targetEntity="Photo", mappedBy="workorder")
+     * @ORM\JoinColumn(name="photo_id", referencedColumnName="id")
+     */
+    private $photos;
 
     /**
      * @ORM\ManyToOne(targetEntity="Vehicle", inversedBy="order")
@@ -271,10 +276,22 @@ class WorkOrder
         return $this->vehicleId;
     }
 
+    public function setPhotos($photos) {
+        return $this->photos = $photos;
+    }
+    public function getPhotos() {
+        return $this->photos;
+    }
+
     public function __construct()
     {
         $this->setStartTime(new \DateTime());
         $this->setEndTime(new \DateTime());
         return $this;
+    }
+
+    public function __toString()
+    {
+        return strval($this->id);
     }
 }

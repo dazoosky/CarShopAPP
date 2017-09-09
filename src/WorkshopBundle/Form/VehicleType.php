@@ -5,6 +5,8 @@ namespace WorkshopBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+
 
 class VehicleType extends AbstractType
 {
@@ -13,7 +15,19 @@ class VehicleType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('type')->add('make')->add('model')->add('year')->add('engineCapacity')->add('fuel')->add('engineCode')->add('body')->add('insuranceDate')->add('survayDate')->add('vin')->add('plateNo')->add('owner');
+        $builder->add('type')
+            ->add('make')
+            ->add('model')
+            ->add('year')
+            ->add('engineCapacity')
+            ->add('fuel',null, array('required' => true))
+            ->add('engineCode',null, array('required' => false))
+            ->add('body',null, array('required' => false))
+            ->add('insuranceDate', DateTimeType::class, array('date_widget' => 'single_text'))
+            ->add('survayDate', DateTimeType::class, array('date_widget' => 'single_text'))
+            ->add('vin')
+            ->add('plateNo')
+            ->add('owner');
     }
     
     /**

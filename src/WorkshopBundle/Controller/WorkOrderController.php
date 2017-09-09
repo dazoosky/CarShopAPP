@@ -72,10 +72,13 @@ class WorkOrderController extends Controller
     {
         $deleteForm = $this->createDeleteForm($workOrder);
         $workOrder->setToDo(unserialize($workOrder->getToDo()));
+        $em = $this->getDoctrine()->getManager();
+        $photos = $em->getRepository('WorkshopBundle:Photo')->findByWorkorder($workOrder);
 
         return $this->render('WorkshopBundle:Admin:panelOrders_showOrder.html.twig', array(
             'workOrder' => $workOrder,
             'delete_form' => $deleteForm->createView(),
+            'photos' => $photos,
         ));
     }
 
@@ -157,13 +160,13 @@ class WorkOrderController extends Controller
     {
         $workOrder = new Workorder();
         $form = $this->createForm('WorkshopBundle\Form\WorkOrderType', $workOrder);
-        $form->remove('vehicleId');
+//        $form->remove('vehicleId');
         $form->handleRequest($request);
         $categories = $this->getDoctrine()->getRepository('WorkshopBundle:WorkOrderCategories')->findAll();
+        $vehicle = $this->getDoctrine()->getRepository(Vehicle::class)->findOneById($id);
 
 //        $x = $this->get('request')->request->get('1');
         if ($form->isSubmitted() && $form->isValid()) {
-            $vehicle = $this->getDoctrine()->getRepository(Vehicle::class)->findOneById($id);
             $todo = $this->handleToDoItems($request, $workOrder);
             $durAndPrice = $this->calculateTimeAndPrice($todo);
             $workOrder->setVehicleId($vehicle);
@@ -181,6 +184,7 @@ class WorkOrderController extends Controller
         }
         $now = date('Y-m-d H:i', time());
         return $this->render('WorkshopBundle:Admin:panelOrders_newOrder.html.twig', array(
+            'vehicle' => $vehicle,
             'workOrder' => $workOrder,
             'categories' => $categories,
             'now' => $now,

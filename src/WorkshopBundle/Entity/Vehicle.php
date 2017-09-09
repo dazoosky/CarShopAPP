@@ -432,6 +432,8 @@ class Vehicle {
     public function __construct()
     {
         $this->order = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->setInsuranceDate(new \DateTime());
+        $this->setSurvayDate(new \DateTime());
     }
 
     /**
@@ -466,6 +468,8 @@ class Vehicle {
     {
         return $this->order;
     }
+
+
 
     public function __toString()
     {

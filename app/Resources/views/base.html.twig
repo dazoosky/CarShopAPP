@@ -11,6 +11,8 @@
     <meta name="author" content="Dazoosky">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    bootstrap.min
+    <script href=""></script>
     <script>
         function startTime() {
             var today = new Date();
@@ -77,8 +79,8 @@
 
 {% endblock %}
 </div>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/scripts.js"></script>
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/scripts.js') }}"></script>
 </body>
 </html>

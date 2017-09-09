@@ -2,10 +2,12 @@
 
 namespace WorkshopBundle\Controller;
 
+use WorkshopBundle\Entity\Person;
 use WorkshopBundle\Entity\Vehicle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use WorkshopBundle\WorkshopBundle;
 
 /**
  * Vehicle controller.
@@ -134,4 +136,36 @@ class VehicleController extends Controller
             ->getForm()
         ;
     }
+
+
+
+    /**
+     * Creates a new vehicle entityby owner.
+     *
+     * @Route("/new/{ownerId}", name="vehicle_new_byOwner")
+     * @Method({"GET", "POST"})
+     */
+    public function newByOwnerAction(Request $request, $ownerId)
+    {
+        $vehicle = new Vehicle();
+        $form = $this->createForm('WorkshopBundle\Form\VehicleType', $vehicle);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+            $owner = $em->getRepository('WorkshopBundle:Person')->findOneById($ownerId);
+            $vehicle->setOwner($owner);
+            $em->persist($vehicle);
+            $em->flush();
+
+            return $this->redirectToRoute('vehicle_show', array('id' => $vehicle->getId()));
+        }
+
+        return $this->render('WorkshopBundle:Admin:panelVehicles_addVehicle.html.twig', array(
+            'vehicle' => $vehicle,
+            'form' => $form->createView(),
+        ));
+    }
 }
+
