@@ -2,30 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0528a36-3aef-4477-af29-eab1269a5623" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/panelCustomer.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelMail_showAll.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelMail_showSent.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/customer_addCustomer.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/panelOrders.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/panelVehicles.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/panelVehicles_showAll.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" afterPath="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register_content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/mail/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/mail/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/mail/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/mail/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Controller/CustomerController.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Controller/CustomerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Controller/MailController.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Controller/MailController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Controller/PersonController.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Controller/PersonController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Entity/Mail.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Entity/Mail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Form/MailType.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Form/MailType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Entity/Person.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Entity/Person.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Form/PersonType.php" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Form/PersonType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_show.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelMail.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelMail.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelMail_create.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelMail_create.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelMail_new.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelMail_new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelMail_newWithReceiver.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelMail_newWithReceiver.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/customer_panel.html.twig" afterPath="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/customer_panel.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,21 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MailController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MailController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/MailController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="panelCustomer.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/panelCustomer.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="60" lean-forward="false" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+            <state relative-caret-position="678">
+              <caret line="117" column="9" lean-forward="false" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -59,11 +29,21 @@
       <file leaf-file-name="PersonController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/PersonController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
+            <state relative-caret-position="522">
               <caret line="92" column="54" lean-forward="false" selection-start-line="92" selection-start-column="54" selection-end-line="92" selection-end-column="54" />
               <folding>
                 <element signature="e#45#107#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Form/PersonType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,14 +58,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/CustomerController.php">
+      <file leaf-file-name="panelCustomers_edit.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="84" column="20" lean-forward="false" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
-              <folding>
-                <element signature="e#45#107#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="707">
+              <caret line="46" column="77" lean-forward="false" selection-start-line="46" selection-start-column="77" selection-end-line="46" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Person.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/Person.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="93" column="61" lean-forward="false" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,21 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customer_addCustomer.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/customer_addCustomer.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="851">
-              <caret line="51" column="62" lean-forward="false" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="panelCustomers_addCustomer.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="41" column="41" lean-forward="false" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+            <state relative-caret-position="1098">
+              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,9 +135,9 @@
       <find>sent</find>
       <find>receiver</find>
       <find>reciever</find>
-      <find>edit</find>
       <find>find</find>
       <find>show</find>
+      <find>edit</find>
     </findStrings>
     <replaceStrings>
       <replace>customer</replace>
@@ -189,9 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Entity/WorkOrder.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/photo/new.html.twig" />
@@ -232,7 +207,6 @@
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/customer_addCustomer.html.twig" />
-        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Controller/PersonController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/panelCustomer.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/panelVehicles.html.twig" />
@@ -240,6 +214,10 @@
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/panelVehicles_showAll.html.twig" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Controller/CustomerController.php" />
         <option value="$PROJECT_DIR$/src/WorkshopBundle/Controller/MailController.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Form/PersonType.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Entity/Person.php" />
+        <option value="$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_edit.html.twig" />
       </list>
     </option>
   </component>
@@ -259,7 +237,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="64" />
-    <option name="y" value="-11" />
+    <option name="y" value="-1091" />
     <option name="width" value="1857" />
     <option name="height" value="1092" />
   </component>
@@ -554,17 +532,18 @@
       <workItem from="1503823661258" duration="123000" />
       <workItem from="1503823922294" duration="27502000" />
       <workItem from="1504545519512" duration="97618000" />
-      <workItem from="1505040469730" duration="3085000" />
+      <workItem from="1505040469730" duration="4547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128328000" />
+    <option name="totallyTimeSpent" value="129790000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <frame x="64" y="-1091" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18867925" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18867925" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -595,28 +574,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelOrders_newOrder.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelVehicles_show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="75" column="187" lean-forward="false" selection-start-line="75" selection-start-column="187" selection-end-line="75" selection-end-column="187" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/GasTypes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-139">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/BodyTypes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
@@ -893,32 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="41" column="41" lean-forward="false" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/PersonController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="92" column="54" lean-forward="false" selection-start-line="92" selection-start-column="54" selection-end-line="92" selection-end-column="54" />
-          <folding>
-            <element signature="e#45#107#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/panelVehicles.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="77" lean-forward="false" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/panelOrders.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -959,14 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/VehicleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="161" column="55" lean-forward="false" selection-start-line="161" selection-start-column="51" selection-end-line="161" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/CustomerController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
@@ -979,8 +902,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/MailController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        <state relative-caret-position="678">
+          <caret line="117" column="9" lean-forward="false" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/VehicleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="161" column="55" lean-forward="false" selection-start-line="161" selection-start-column="51" selection-end-line="161" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Customer/panelVehicles.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="77" lean-forward="false" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_addCustomer.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1098">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Controller/PersonController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="92" column="54" lean-forward="false" selection-start-line="92" selection-start-column="54" selection-end-line="92" selection-end-column="54" />
+          <folding>
+            <element signature="e#45#107#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Form/PersonType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Resources/views/Admin/panelCustomers_edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="707">
+          <caret line="46" column="77" lean-forward="false" selection-start-line="46" selection-start-column="77" selection-end-line="46" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkshopBundle/Entity/Person.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="93" column="61" lean-forward="false" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
           <folding />
         </state>
       </provider>

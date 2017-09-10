@@ -91,7 +91,7 @@ class Person
     /**
      * @var boolean
      *
-     * @ORM\Column(name="customer", type="boolean", nullable=false, options={"default":true})
+     * @ORM\Column(name="customer", type="boolean", nullable=true, options={"default":true})
      */
     private $customer;
 
