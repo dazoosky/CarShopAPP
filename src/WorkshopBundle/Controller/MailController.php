@@ -52,16 +52,16 @@ class MailController extends Controller
     public function newAction(Request $request)
     {
         $mail = new Mail();
+        $mail->setSender($this->container->get('security.context')->getToken()->getUser()->getEmail());
         $form = $this->createForm('WorkshopBundle\Form\MailType', $mail);
         $form->remove('sendDate');
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $msg = new \Swift_Message('Hello mail');
-            $msg->setFrom($mail->getSender());
+            $msg->setFrom($user = $this->container->get('security.context')->getToken()->getUser()->getEmail());
             $msg->setTo($mail->getReciever());
             $msg->setContentType('html');
-//            $msg->setBody($mail->getText());
             $msg->setBody($this->renderView('WorkshopBundle/Email/email.html.twig',
                     array('context' => $mail->getText())),'text/html');
             $this->get('mailer')->send($msg);
@@ -79,6 +79,48 @@ class MailController extends Controller
             'form' => $form->createView(),
         ));
     }
+
+    /**
+     * Creates a new mail entity.
+     *
+     * @Route("/new/{receiver}", name="mail_newWithReciever")
+     * @Method({"GET", "POST"})
+     */
+    public function newWithReceiverAction(Request $request, $receiver)
+    {
+        $mail = new Mail();
+        if (!filter_var($receiver, FILTER_VALIDATE_EMAIL)) {
+            return $this->redirectToRoute('mail_new');
+        }
+        $mail->setReciever($receiver);
+        $mail->setSender($this->container->get('security.context')->getToken()->getUser()->getEmail());
+        $form = $this->createForm('WorkshopBundle\Form\MailType', $mail);
+        $form->remove('sendDate');
+        $form->handleRequest($request);
+
+
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $msg = new \Swift_Message('Hello mail');
+            $msg->setContentType('html');
+            $msg->setBody($this->renderView('WorkshopBundle/Email/email.html.twig',
+                array('context' => $mail->getText())),'text/html');
+            $this->get('mailer')->send($msg);
+            $mail->setSendDate(new \DateTime());
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($mail);
+            $em->flush();
+
+            return $this->redirectToRoute('mail_show', array('id' => $mail->getId()));
+        }
+
+
+        return $this->render('WorkshopBundle:Admin:panelMail_newWithReceiver.html.twig', array(
+            'mail' => $mail,
+            'form' => $form->createView(),
+        ));
+    }
+
 
     /**
      * Finds and displays a mail entity.

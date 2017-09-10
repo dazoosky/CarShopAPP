@@ -7,12 +7,12 @@
         <div class="form-group">
             <label>Nadawca</label>
             {#<input type="text" value="xxx" name="sender" class="form-control" disabled>#}
-            {{ form_widget(form.sender, {'attr': {'class': 'form-control', 'disabled': true}}) }}
+            {{ form_widget(form.sender, {'attr': {'class': 'form-control'}}) }}
         </div>
         <div class="form-group">
             <label>Odbiorca</label>
             {#<input type="email" name="reciever" class="form-control">#}
-            {{ form_widget(form.reciever, {'attr': {'class': 'form-control'}}) }}
+            {{ form_widget(form.reciever, {'attr': {'class': 'form-control', 'disabled': true}}) }}
         </div>
         <div class="form-group">
             <label>Treść</label>
