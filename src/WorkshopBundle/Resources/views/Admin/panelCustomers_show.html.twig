@@ -38,6 +38,16 @@
             <td>{{ person.phoneno }}</td>
         </tr>
         <tr>
+            <th>Email</th>
+            <td>
+            {% if not person.user == null %}
+                <a href="{{ path('mail_newWithReceiver', {'receiver': person.user.email}) }}"><span class="glyphicon glyphicon-envelope"> {{ person.user.email }}</span></a>
+            {% else %}
+                <span class="glyphicon glyphicon-remove"> Brak adresu email</span>
+            {% endif %}
+            </td>
+        </tr>
+        <tr>
             <th>Numer NIP</th>
             <td>{{ person.nip }}</td>
         </tr>

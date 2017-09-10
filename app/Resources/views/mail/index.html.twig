@@ -20,7 +20,7 @@
                 <td><a href="{{ path('mail_show', { 'id': mail.id }) }}">{{ mail.id }}</a></td>
                 <td>{{ mail.text }}</td>
                 <td>{{ mail.sender }}</td>
-                <td>{{ mail.reciever }}</td>
+                <td>{{ mail.receiver }}</td>
                 <td>{% if mail.sendDate %}{{ mail.sendDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
                     <ul>

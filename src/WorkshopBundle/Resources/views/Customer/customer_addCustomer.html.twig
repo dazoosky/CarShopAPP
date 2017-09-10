@@ -1,9 +1,14 @@
 {% extends "::panel.html.twig" %}
 
 {% block mainbox %}
+    <div class="row well">
+        <div class="col-md-3"><b>Jeśli już u nas byłeś:</b></div>
+        <div class="col-md-8 center-block">
+            <a href="{{ path('customerPanel') }}" class="btn btn-info btn-lg">Jestem już klientem</a>
+        </div>
+    </div>
     <div class="row">
-        <h1>Dodaj klienta</h1>
-        <div class="col-md-2"></div>
+        <div class="col-md-3"><b>Jeśli jeszcze nie było Cie u nas, uzupełnij dane:</b></div>
         <div class="col-md-8">
             {{ form_start(form) }}
             <div class="form-group">
@@ -38,24 +43,15 @@
                 <label>NIP</label>
                 {{ form_widget(form.nip, { 'attr': {'class': 'form-control'} }) }}
             </div>
-            <div class="form-group">
-                <label>Login użytkownika (jeśli ma konto)</label>
-                {{ form_widget(form.user, { 'attr': {'class': 'form-control'} }) }}
-            </div>
-            <div class="form-group">
-                <label>Czy to klient?</label>
-                {{ form_widget(form.customer, { 'attr': {'class': 'form-control', 'checked': true } }) }}
-            </div>
             <div class="row">
                 <div class="col-md-4">
-                    <input type="submit" value="Zapisz" class="btn btn-success btn-lg"/>
+                    <input type="submit" value="Dodaj klienta" class="btn btn-info btn-lg"/>
                     {{ form_end(form) }}
                 </div>
                 <div class="col-md-4 pull-right">
-                    <a href="{{ path('person_index') }}" class="btn btn-danger btn-lg pull-right">Anuluj</a>
+                    <a href="{{ path('fos_user_security_logout') }}" class="btn btn-danger btn-lg pull-right">Anuluj</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-2"></div>
     </div>
 {% endblock %}

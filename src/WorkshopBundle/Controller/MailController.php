@@ -38,7 +38,7 @@ class MailController extends Controller
 
         $mails = $em->getRepository('WorkshopBundle:Mail')->findAll();
 
-        return $this->render('mail/index.html.twig', array(
+        return $this->render('WorkshopBundle:Admin:panelMail_showAll.html.twig', array(
             'mails' => $mails,
         ));
     }
@@ -52,6 +52,7 @@ class MailController extends Controller
     public function newAction(Request $request)
     {
         $mail = new Mail();
+
         $mail->setSender($this->container->get('security.context')->getToken()->getUser()->getEmail());
         $form = $this->createForm('WorkshopBundle\Form\MailType', $mail);
         $form->remove('sendDate');
@@ -59,8 +60,9 @@ class MailController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $msg = new \Swift_Message('Hello mail');
-            $msg->setFrom($user = $this->container->get('security.context')->getToken()->getUser()->getEmail());
-            $msg->setTo($mail->getReciever());
+            $msg->setFrom($mail->setSender());
+
+            $msg->setTo($mail->getReceiver());
             $msg->setContentType('html');
             $msg->setBody($this->renderView('WorkshopBundle/Email/email.html.twig',
                     array('context' => $mail->getText())),'text/html');
@@ -83,7 +85,7 @@ class MailController extends Controller
     /**
      * Creates a new mail entity.
      *
-     * @Route("/new/{receiver}", name="mail_newWithReciever")
+     * @Route("/new/{receiver}", name="mail_newWithReceiver")
      * @Method({"GET", "POST"})
      */
     public function newWithReceiverAction(Request $request, $receiver)
@@ -92,18 +94,19 @@ class MailController extends Controller
         if (!filter_var($receiver, FILTER_VALIDATE_EMAIL)) {
             return $this->redirectToRoute('mail_new');
         }
-        $mail->setReciever($receiver);
+        $mail->setReceiver($receiver);
         $mail->setSender($this->container->get('security.context')->getToken()->getUser()->getEmail());
         $form = $this->createForm('WorkshopBundle\Form\MailType', $mail);
         $form->remove('sendDate');
         $form->handleRequest($request);
 
-
-
         if ($form->isSubmitted() && $form->isValid()) {
+            $mail->setReceiver($receiver);
+            $mail->setSender($this->container->get('security.context')->getToken()->getUser()->getEmail());
+
             $msg = new \Swift_Message('Hello mail');
             $msg->setContentType('html');
-            $msg->setBody($this->renderView('WorkshopBundle/Email/email.html.twig',
+            $msg->setBody($this->renderView('WorkshopBundle:Email:email.html.twig',
                 array('context' => $mail->getText())),'text/html');
             $this->get('mailer')->send($msg);
             $mail->setSendDate(new \DateTime());
@@ -132,7 +135,7 @@ class MailController extends Controller
     {
         $deleteForm = $this->createDeleteForm($mail);
 
-        return $this->render('mail/show.html.twig', array(
+        return $this->render('WorkshopBundle:Admin:panelMail_showSent.html.twig', array(
             'mail' => $mail,
             'delete_form' => $deleteForm->createView(),
         ));

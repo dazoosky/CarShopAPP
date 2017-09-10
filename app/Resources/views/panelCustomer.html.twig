@@ -1,0 +1,25 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+        <div class="container">
+            <div class="col-md-3 well text-center">
+                <br>
+                <div class="btn-group btn-group-vertical btn-group-lg">
+                    <button type="button" class="btn btn-info h80">
+                        Czas:<p id="clock"></p>
+                    </button>
+                    <a href="{{ path("customerPanel_vehicles") }}" class="btn btn-default h55" type="button">
+                        <p class="pull-left"><img src="{{ asset('img/icons/vehicles.png') }}"> Pojazdy</p>
+                    </a>
+                    <a href="{{ path('customerPanel_vehicles') }}" class="btn btn-default h55" type="button">
+                        <p class="pull-left"><img src="{{ asset('img/icons/orders.png') }}"> Zlecenia</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                {% block mainbox %}
+                    {% endblock %}
+            </div>
+        </div>
+{% endblock %}

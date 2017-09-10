@@ -6,7 +6,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use WorkshopBundle\Entity\Person;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Person controller.
@@ -37,7 +38,6 @@ class PersonController extends Controller
      *
      * @Route("/new", name="person_new")
      * @Method({"GET", "POST"})
-     * @Security("has_role('ROLE_ADMIN')")
      */
     public function newAction(Request $request)
     {
@@ -90,7 +90,7 @@ class PersonController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('person_edit', array('id' => $person->getId()));
+            return $this->redirectToRoute('person_show', array('id' => $person->getId()));
         }
 
         return $this->render('WorkshopBundle:Admin:panelCustomers_edit.html.twig', array(

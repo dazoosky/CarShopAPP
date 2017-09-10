@@ -1,0 +1,31 @@
+{% extends '::panel.html.twig' %}
+
+{% block mainbox %}
+    <h1>Wysłane maile</h1>
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Treść</th>
+            <th>Nadawca</th>
+            <th>Odbiorca</th>
+            <th>Data wysłania</th>
+            <th>Akcje</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for mail in mails %}
+            <tr>
+                <td><a href="{{ path('mail_show', { 'id': mail.id }) }}">{{ mail.id }}</a></td>
+                <td>{{ mail.text }}</td>
+                <td>{{ mail.sender }}</td>
+                <td>{{ mail.receiver }}</td>
+                <td>{% if mail.sendDate %}{{ mail.sendDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <a href="{{ path('mail_show', { 'id': mail.id }) }}">pokaż</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

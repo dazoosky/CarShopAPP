@@ -1,0 +1,37 @@
+{% extends "::panelCustomer.html.twig" %}
+
+{% block mainbox %}
+        <h1>Lista pojazdów</h1>
+
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th class="col-md-1">Id</th>
+                        <th class="col-md-2">Typ</th>
+                        <th class="col-md-2">Marka</th>
+                        <th class="col-md-2">Model</th>
+                        <th class="col-md-3">Nr VIN</th>
+                        <th class="col-md-2">Nr rejestracyjny</th>
+                        <th class="col-md-2">Akcje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for vehicle in vehicles %}
+                    <tr>
+                        <td><a href="{{ path('vehicle_show', { 'id': vehicle.id }) }}">{{ vehicle.id }}</a></td>
+                        <td>{{ vehicle.type }}</td>
+                        <td>{{ vehicle.make }}</td>
+                        <td>{{ vehicle.model }}</td>
+                        <td>{{ vehicle.vIN }}</td>
+                        <td>{{ vehicle.plateNo }}</td>
+                        <td>
+                            <a href="{{ path('vehicle_show', { 'id': vehicle.id }) }}" class="glyphicon glyphicon-info-sign"> POKAŻ </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+                    <a href="{{ path('vehicle_new') }}" class="btn btn-success btn-lg"><span class="glyphicon glyphicon glyphicon-plus"></span>Dodaj pojazd</a>
+
+{% endblock %}

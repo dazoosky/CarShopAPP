@@ -38,9 +38,9 @@ class Mail
     /**
      * @var string
      *
-     * @ORM\Column(name="reciever", type="string", length=255)
+     * @ORM\Column(name="receiver", type="string", length=255)
      */
-    private $reciever;
+    private $receiver;
 
     /**
      * @var \DateTime
@@ -107,26 +107,26 @@ class Mail
     }
 
     /**
-     * Set reciever
+     * Set receiver
      *
-     * @param string $reciever
+     * @param string $receiver
      * @return Mail
      */
-    public function setReciever($reciever)
+    public function setReceiver($receiver)
     {
-        $this->reciever = $reciever;
+        $this->receiver = $receiver;
 
         return $this;
     }
 
     /**
-     * Get reciever
+     * Get receiver
      *
      * @return string 
      */
-    public function getReciever()
+    public function getReceiver()
     {
-        return $this->reciever;
+        return $this->receiver;
     }
 
     /**
