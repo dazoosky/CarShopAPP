@@ -91,16 +91,16 @@ class Vehicle {
 
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
-     * @ORM\Column(name="insuranceDate", type="datetime", nullable=true)
+     * @ORM\Column(name="insuranceDate", type="date", nullable=true)
      */
     private $insuranceDate;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
-     * @ORM\Column(name="survayDate", type="datetime", nullable=true)
+     * @ORM\Column(name="survayDate", type="date", nullable=true)
      */
     private $survayDate;
 
