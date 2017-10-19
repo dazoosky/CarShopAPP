@@ -78,3 +78,5 @@ fos_user:
 services:
     fos_user.doctrine_registy:
         alias: doctrine
+
+
