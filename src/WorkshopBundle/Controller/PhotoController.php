@@ -46,7 +46,7 @@ class PhotoController extends Controller
         $form = $this->createForm('WorkshopBundle\Form\PhotoType', $photo);
 //        $form = $this->createForm(PhotoType::class, $photo);
         $form->remove('author');
-        $form->remove('workorder');
+        $form->remove('workOrder');
         $form->handleRequest($request);
         $em = $this->getDoctrine()->getManager();
         $workOrder = $em->getRepository('WorkshopBundle:WorkOrder')->findOneById($workOrderId);
