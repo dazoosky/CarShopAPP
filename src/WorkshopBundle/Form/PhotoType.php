@@ -13,7 +13,7 @@ class PhotoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('author')->add('workorder');
+        $builder->add('name', 'file')->add('author')->add('workorder');
     }
     
     /**

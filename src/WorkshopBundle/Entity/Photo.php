@@ -37,7 +37,7 @@ class Photo
     /**
      * @var string
      *
-     * @Assert\NotBlank(message="Please, upload the product brochure as a PDF file.")
+     * @Assert\NotBlank(message="Please, upload the photo as JPG file.")
      * @Assert\File(mimeTypes={ "image/jpeg" })
      * @ORM\Column(name="name", type="string", length=255)
      */

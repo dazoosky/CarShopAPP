@@ -481,4 +481,22 @@ class Vehicle {
         return $vehicle;
         // TODO: Implement __toString() method.
     }
+
+    public function getIntoAboutVehicle() {
+        $array = [
+            'id' => $this->getId(),
+            'make' => $this->getMake(),
+            'model' => $this->getModel(),
+            'year' => $this->getYear(),
+            'engineCapacity' => $this->getEngineCapacity(),
+            'engineCode' => $this->getEngineCode(),
+            'VIN' => $this->getvin(),
+            'plateNo' => $this->getPlateNo(),
+        ];
+        return $array;
+    }
+
+    public function getMakeModelYear() {
+        return $this->getMake().' '.$this->getModel().' '.$this->getYear();
+    }
 }

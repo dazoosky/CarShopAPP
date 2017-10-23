@@ -16,7 +16,7 @@ class WorkOrderRepository extends EntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT p FROM WorkshopBundle:workorder p WHERE p.status = :status')->setParameter('status', $status)
+                    'SELECT p FROM WorkshopBundle:workorder p WHERE p.status = :status')->setParameter('status', $status)
             ->getResult();
     }
 

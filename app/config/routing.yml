@@ -5,3 +5,8 @@ workshop:
     
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+api:
+    resource: "@WorkshopBundle/Controller/ApiController.php"
+    prefix: /api/
+    type: rest

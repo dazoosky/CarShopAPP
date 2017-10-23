@@ -403,4 +403,13 @@ class Person
         $name = $this->surname.' '.$this->name;
         return $name;
     }
+
+    public function getInfoAbout() {
+        $array = [
+            'name' => $this->getName(),
+            'surname' => $this->getSurname(),
+            'phone' => $this->getPhoneno(),
+        ];
+        return $array;
+    }
 }
